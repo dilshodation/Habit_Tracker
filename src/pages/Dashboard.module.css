@@ -1,0 +1,149 @@
+.dashboardDiv {
+  width: 550px;
+  padding: 30px;
+  margin: 10px;
+  background-color: #1E2129;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  border-radius: 28px;
+  border: 1px solid #3e404d;
+  /* gap: 10px; */
+  /* gap: 10px; */
+
+}
+
+.blockOptions {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  /* height: 90px; */
+  border-radius: 20px;
+  margin-top: 10px;
+}
+
+.blOp1 {
+  background-image: linear-gradient(to right, #FF6B6B, #FF8E7A);
+
+
+}
+
+.blOp2 {
+  background-image: linear-gradient(to right, #5D9CEC, #4A89DC);
+}
+
+.blOp3 {
+  background-image: linear-gradient(to right, #48C9B0, #1ABC9C);
+}
+
+.nav2 {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  justify-content: end;
+  width: 250px;
+  text-align: center;
+}
+
+.nav2H3 {
+  color: #2d3436;
+  font-weight: bold;
+  margin: 0;
+}
+
+.nav1 {
+  display: flex;
+  /* justify-content:center; */
+  /* align-items: center; */
+  width: 150px;
+  text-align: left;
+  gap: 10px;
+}
+
+.nav1 h2 {
+  /* font-size:25px; */
+  margin: 0;
+}
+
+.dashBoardDivH3 {
+  color: #8E929D;
+  /* margin: 10px; */
+}
+
+.dashboardDiv h1 {
+  color: #FFFFFF;
+}
+
+.dashboardDiv button {
+  /* padding: 10px; */
+  background-color: white;
+  font-weight: bold;
+  font-size: 15px;
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  position: relative;
+}
+.dashboardDiv button span {
+  position: absolute;
+  width: 100px;
+  left: -110px;
+  background-color: white;
+  padding: 3px;
+  border-radius: 5px;
+  display: none;
+  transition: 0.5s;
+  animation: anime 0.7s forwards linear;
+}
+.dashboardDiv button span::after {
+  content: '';
+  position: absolute;
+  right: -12px;
+  top: 25%;
+  border: 7px solid transparent;
+  border-left-color: white;
+}
+.dashboardDiv button:hover span {
+  display: inline-block;
+}
+@keyframes anime {
+  0%{opacity: 0;} 
+  100%{opacity: 1;} 
+}
+.dashboardMiniCont{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav3 {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.nav4 {
+
+  /* position: relative; */
+  width: 100%;
+  height: 5px;
+  background-color: rgba(0, 0, 0, 0.644);
+}
+
+.progress {
+  /* position: absolute; */
+  background-color: white;
+  /* width: 50%; */
+  height: 5px;
+}

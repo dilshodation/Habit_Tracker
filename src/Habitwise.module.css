@@ -1,0 +1,91 @@
+.HabitwiseCard{
+  display: flex;
+  /* display: none; */
+  justify-content: center;
+  align-items: center;
+  /* padding: 30px; */
+ height: 100vh;
+  position: relative;
+  background-color:#0f1116;
+  margin: 0;
+}
+.icon{
+  /* padding: 10px; */
+  /* color: #ffffff; */
+  /* background-color: #ffffff; */
+  /* border: solid 1px white; */
+  fill: white;
+  font-size: 25px;
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+}
+.HabitwiseWrapper{
+  background-color: rgba(30, 35, 45, 0.7);
+  backdrop-filter: blur(15px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 20px;
+  width: 500px;
+}
+.HabitwiseWrapper h1{
+ color: #ffffff;
+  font-size:30px;
+}
+.hh3{
+  color:  rgba(255, 255, 255, 0.4);
+}
+.userPhotoDiv{
+height: 120px;
+width: 120px;
+border-radius: 50%;
+border: 2px solid #22d3ee;
+box-shadow: 0 0 15px rgba(34, 211, 238, 0.3);  
+position: relative;
+}
+.inputsDiv{
+  display: flex;
+  /* justify-content: center;
+  align-items: center; */
+  flex-direction: column;
+  gap: 15px;
+  width: 90%;
+}
+.inputsDiv input{
+  background: #1a1d23;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 12px 12px 12px 45px;
+  width: 100%;
+  padding: 12px;
+font-size: 15px;
+}
+.inputsDiv input:focus{
+  border-color: #22d3ee;
+  box-shadow: 0 0 8px rgba(34, 211, 238, 0.2)
+}
+.createBtn{
+  background: linear-gradient(90deg, #22d3ee, #0ea5e9)  ;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(14, 165, 233, 0.4);
+  padding: 15px;
+  margin-top: 15px;
+  border-radius: 25px;
+  border: none;
+  font-size: 13px;
+  width: 90%;
+}
+.createBtn:hover{
+  transform: scale(1.02)
+}
+.createBtn:active{
+  transform: scale(0.95);
+}
+.createBtn::placeholder{
+ color:  rgba(255, 255, 255, 0.4);
+}

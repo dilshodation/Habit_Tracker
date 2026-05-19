@@ -1,0 +1,214 @@
+.addHabitModalDiv{
+  background-color: #24252D;
+  border-radius: 28px;
+  border: 1px solid #3e404d;
+  display:flex;
+  width: 500px;
+  flex-direction: column;
+  color: #FFFFFF;
+  padding: 30px;
+  position: absolute;
+  right: 200px;
+  /* right: 500px; */
+  top: 10px;
+}
+.headerDiv{
+  display:flex;
+  justify-content:space-between ;
+  
+}
+.xButton{
+  background-color: transparent;
+  color: #A0AEC0;
+  cursor: pointer;
+  border: none;
+  font-size: 20px;
+  padding: 5px;
+  transition: color 0.2s ease;
+}
+.xButton:hover{
+  color: #FFFFFF;
+}
+.habitNameDiv{
+/* display:flex; */
+background-color: #1C1D24;
+border-radius: 12px;
+color: #FFFFFF;
+padding: 15px;
+border:  1px solid #3e404d;
+}
+.habitNameDiv input{
+  background-color: #1C1D24;
+  border: 1px solid #3E404D;
+  border-radius:12px ;
+  padding: 15px;
+  color: #FFFFFF;
+  height: 55px;
+  font-size: 15px;
+  width: 100%;
+  
+
+}
+.habitNameDiv input:focus{
+  border: 1px solid #7B61FF;
+}
+.habitNameDiv input::placeholder{
+  color: #4A5568;
+ 
+}
+.iconButtonDiv{
+  display: flex;
+   flex-wrap: wrap; 
+   justify-content: center; 
+  align-items: center;  
+  gap: 15px;
+
+}
+.iconButton{
+ margin: auto;
+  width: 55px;
+  height: 55px;
+  font-size:17px;
+  background-color: transparent;
+  border: 1px solid #3E404D;
+  border-radius: 12px;
+  color: #a0aec0;
+}
+.iconButton:active{
+  border-color: #7B61FF;
+  background-color: #312E45;
+}
+.iconButton:hover {
+  border-color: #7B61FF;
+  color: #FFFFFF;
+  background-color: rgba(123, 97, 255, 0.05); 
+}
+.iconButton:focus {
+  outline: none;
+  border-color: #7B61FF;
+  color: #FFFFFF;
+  background-color: #312E45;
+  box-shadow: 0 0 0 3px rgba(123, 97, 255, 0.25);}
+.colorButtonDiv{
+  display: flex;
+  gap: 15px;
+  padding: 5px 0;
+}
+.colorButton{
+  height: 45px;
+  width: 45px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  border-radius:50%;
+  font-size: 16px;
+  margin: auto;
+  margin-top: 15px;
+}
+.colorButton:active{
+  border: 2px solid #FFFFFF;
+  box-shadow: 0px 0px 8px rgba(255,255,255, 0.3);
+}
+/* .colorButton:focus {
+  outline: none; 
+  border: 2px solid #FFFFFF; 
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.4); 
+  transform: scale(1.1); 
+  transition: all 0.2s ease;
+} */
+.colorBtnFocusToggle{
+  outline: none; 
+  border: 2px solid #FFFFFF; 
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.4); 
+  transform: scale(1.1); 
+  transition: all 0.2s ease;
+}
+.repetitionDiv{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+  
+}
+
+section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+  background-color: transparent;
+  border: 1px solid #3e404d;
+  color: #A0AEC0;
+  border-radius: 12px;
+}
+.repetitionButton{
+  font-size: 14px;
+  height: 45px;
+  width: 140px;
+  background-color: #1C1D24;
+  border: 1px solid #3E404D;
+  border-radius:12px;
+  color: #A0AEC0;
+}
+.repetitionButton:active{
+  border: 1px solid #7B61FF;
+  color: #FFFFFF;
+  background-color: #3E404D;
+  box-shadow: 0 0 10px rgba(123, 97, 255, 0.3);
+}
+.repetitionButton:focus {
+  outline: none; 
+  border: 1px solid #7B61FF;
+  color: #FFFFFF;
+  background-color: #2D2E37; 
+  box-shadow: 0 0 0 3px rgba(123, 97, 255, 0.2)
+}
+.cancelSaveButtonsDiv{
+display: flex;
+justify-content:center;
+align-items: center;
+gap: 15px;
+margin-top: 20px;
+}
+.cancelButton{
+  height: 55px;
+  width: 400px;
+  background-color: #E2E8F0;
+  color: #1A202C;
+  border-radius:50px;
+  border: none;
+  font-weight:bold;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+
+}
+.cancelButton:hover{
+  background-color: #CBD5E1;
+}
+.cancelButton:active{
+  transform:scale(0.97);
+}
+.saveButton{
+  height: 55px;
+  width: 400px;
+  background-color: #7B61FF;
+  color:#FFFFFF;
+  border-radius:50px;
+  font-size: 14px;
+  border: none;
+  font-weight:bold;
+  box-shadow: 0px 4px 14px rgba(123, 97, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.saveButton:hover{
+  background-color: #6849FF;
+  box-shadow: 0px 10px 25px rgba(123, 97, 255, 0.5);
+  transform: translateY(-1px);
+}
+.saveButton:active{
+  transform: scale(0.97);
+  box-shadow: 0px 4px 10px rgba(123,97,255,0.3);
+}
