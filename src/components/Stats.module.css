@@ -1,0 +1,57 @@
+.statsDiv h1{
+  color: white;
+  font-size: 28px;
+  margin-bottom: 0px;
+  margin-top: 10px;
+}
+
+.statsMainDiv{
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  background-color: #1E2129;
+
+  padding: 20px;
+  width:550px;
+  margin: 10px;
+  border-radius:28px;
+  border: 1px solid #3e404d;
+  flex-direction:column;
+
+}
+
+.statsSmallDiv{
+  background-color:#2C313C;
+  border: 1px solid #3e404d;
+
+  width: 35%;
+  border-radius: 20px;
+  padding: 15px;
+}
+
+.statsDiv{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:100%;
+ 
+  gap: 15px;
+  
+}
+.statsMainDiv h2{
+  color: #FFFFFF;
+}
+.statsDiv h3{
+  color:#FFFFFF ;
+  margin: 0;
+ 
+
+}
+.statsDiv p{
+  color: #FFFFFF;
+  margin: 0;
+  font-weight:bold;
+  color: #8E929D;
+  
+
+}

@@ -81,7 +81,8 @@ font-size: 15px;
   width: 90%;
 }
 .createBtn:hover{
-  transform: scale(1.02)
+  transform: scale(1.02);
+  box-shadow: 0 4px 20px rgba(14, 165, 233, 0.4);
 }
 .createBtn:active{
   transform: scale(0.95);

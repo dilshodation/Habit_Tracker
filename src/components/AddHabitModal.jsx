@@ -2,7 +2,7 @@ import style from './AddHabitModal.module.css'
 import { useState, useContext } from 'react'
 import { UserContext } from '../UserContext'
 
-function AddHabitModal() {
+function AddHabitModal({closeModal}) {
   const { habit, setHabit } = useContext(UserContext)
 
   const [inp, setInpValue] = useState(``)
@@ -113,7 +113,7 @@ function AddHabitModal() {
     <div className={style.addHabitModalDiv}>
       <div className={style.headerDiv}>
         <h1>Creating a New Habit</h1>
-        <button className={style.xButton}>X</button>
+        <button onClick={closeModal} className={style.xButton}>X</button>
       </div>
       <div className={style.habitNameDiv}>
         <h2>Habit Name</h2>
@@ -175,6 +175,7 @@ function AddHabitModal() {
             setDayBt(``)
             setIconBt(``)
             setcolorBt(``)
+            closeModal()
 
           }}
         >Cancel</button>
@@ -187,13 +188,18 @@ function AddHabitModal() {
                 day: dayBt,
                 percent: 0,
                 habitStickers: iconBt,
-                habitBgColor: colorBt
+                habitBgColor: colorBt,
+                checkbox: false
+
+                
+  
               }])
               setCountPercent(countPercent + 1)
               setInpValue(``)
               setDayBt(``)
               setIconBt(``)
               setcolorBt(``)
+              closeModal()
             } else {
               alert(`Toliq ma'lumot yozing`)
             }

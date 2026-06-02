@@ -1,0 +1,94 @@
+.LogInBigDiv{
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction: column;
+background-color:#0f1116;
+position: relative;
+margin: 0;
+height: 100vh;
+}
+.LogInWrapperDiv{
+display: flex;
+justify-content:center;
+align-items:center;
+flex-direction: column;
+text-align: center;
+width:500px;
+background-color: rgba(30, 35, 45, 0.7);
+backdrop-filter: blur(15px);
+padding: 20px;
+border-radius: 20px;
+}
+.LogInInputsDiv{
+width: 90%;
+text-align: left;
+/* margin: 0; */
+}
+.LogInInputsDiv input{
+background: #1a1d23;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 12px 12px 12px 45px;
+  width: 100%;
+  padding: 12px;
+font-size: 15px;
+}
+.LogInInputsDiv input:focus{
+  border-color: #6636cb;
+  box-shadow: 0 0 0 4px rgba(102, 54, 203, 0.25), 0 4px 15px rgba(102, 54, 203, 0.1);
+}
+.LogInBigDiv button{
+  background: linear-gradient(90deg, #8768ea, #6636cb)  ;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(102, 54, 203, 0.4);  padding: 15px;
+  margin-top: 15px;
+  border-radius: 25px;
+  border: none;
+  font-size: 13px;
+  width: 90%;
+}
+.LogInBigDiv button:hover{
+  transform: scale(1.02);
+  box-shadow: 0 6px 24px rgba(102, 54, 203, 0.5);
+}
+.LogInBigDiv button:active{
+  transform: scale(0.95);
+}
+.LogInBigDiv button::placeholder{
+ color:  rgba(255, 255, 255, 0.4);
+}
+.LogInWrapperH3{
+  color: #ffffff;
+  font-size: 17px;
+  line-height: 30px;
+  width: 80%;
+
+}
+.inpH3{
+  color:  white;
+margin-bottom: 10px;
+}
+.forgotPasswordH4{
+  color: #8768ea;
+
+} 
+.downLinksDiv{
+  display: flex;
+justify-content: center;
+align-items: center;
+gap: 5px;
+}
+.downLinksDiv h4{
+  color: white;
+}
+.downLinksDiv a{
+  color:rgba(255, 255, 255, 0.666);
+  text-decoration: none;
+}
+.LogInWrapperDiv h1{
+  color: #ffffff;
+  font-size: 27px;
+}

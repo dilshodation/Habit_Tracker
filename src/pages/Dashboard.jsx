@@ -1,13 +1,11 @@
 import style from './Dashboard.module.css';
+import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { UserContext } from '../UserContext';
-// import { data, useFetcher } from 'react-router-dom';
 
 
-
-function Dashboard() {
-  const {habit,setHabit,inputs} = useContext(UserContext)
-  console.log(inputs)
+function Dashboard({openModal}) {
+  const { habit, setHabit, inputs } = useContext(UserContext)
   let getGreeting = () => {
     let hours = new Date().getHours()
     if (
@@ -72,16 +70,16 @@ function Dashboard() {
     <div className={style.dashboardDiv}>
       <h1>{greeting}</h1>
       <nav className={style.dashboardMiniCont}>
-      <h3 className={style.dashBoardDivH3}>{putMonth}{dayYear}</h3>
-      <button>+
-        <span>Add a new Habit</span>
-      </button>
+        <h3 className={style.dashBoardDivH3}>{putMonth}{dayYear}</h3>
+        <button onClick={openModal} >+
+          <span>Add a new Habit</span>
+        </button>
       </nav>
       <div>
         {
           habit.map((items) => {
             return (
-              <BlockOptions key={items.id} id={items.id} addHabitStickers={items.habitStickers} blockOptionClass={items.habitBgColor} namee={items.name} dayss={items.day} change={items.percent} />
+              <BlockOptions key={items.id} checkbox={items.checkbox} id={items.id} addHabitStickers={items.habitStickers} blockOptionClass={items.habitBgColor} namee={items.name} dayss={items.day} change={items.percent} />
             )
           })
         }
@@ -94,21 +92,23 @@ export default Dashboard
 
 
 
-function BlockOptions({ namee, dayss, blockOptionClass, change, addHabitStickers , id}) {
-  const {habit,setHabit,edit} = useContext(UserContext)
- 
+function BlockOptions({ namee, dayss, blockOptionClass, change, addHabitStickers, id, checkbox }) {
+  const { habit, setHabit, editPercent } = useContext(UserContext)
+
   return (
-    <div className={style.blockOptions} style={{backgroundColor: blockOptionClass}}>
+    <div className={style.blockOptions} style={{ backgroundColor: blockOptionClass }}>
       <nav className={style.nav1}>
         <h2>{addHabitStickers}</h2>
         <h2>{namee}</h2>
       </nav>
+
+
+
       <nav className={style.nav2}>
         <h3 className={style.nav2H3}>  {dayss} days streak</h3>
-        <input type="checkbox"
-          onClick={()=>{
-            edit(id,100/dayss)
-            // console.log(100/dayss)           
+        <input type="checkbox" checked={checkbox}
+          onChange={() => {
+            editPercent( id,Math.round( 100 / dayss))
           }}
         />
       </nav>
@@ -118,6 +118,11 @@ function BlockOptions({ namee, dayss, blockOptionClass, change, addHabitStickers
         </nav>
         <h3>{change}%</h3>
       </div>
+
+
     </div>
+
+
+
   )
 }

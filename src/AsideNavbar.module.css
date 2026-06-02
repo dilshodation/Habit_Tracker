@@ -1,0 +1,98 @@
+.hh1{
+  /* font-size: 10px; */
+  color: white;
+}
+.asideNavbarBigDiv{
+  padding: 15px;
+  background-color: #24252D;
+  border: 1px solid #3e404d;
+  border-top-left-radius: 28px;
+  border-bottom-left-radius: 28px;
+
+
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  height: 620px;
+  width: 100px;
+  /* text-align: center; */
+  
+}
+.asideBtnsDiv1 {
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+/* text-align: center; */
+gap: 10px;
+}
+.asideBtnsDiv1 button{
+  padding: 20px;
+  /* margin: auto; */
+  font-size: 10px;
+  font-weight: bold;
+  background-color: #24252D;
+  border-radius: 10px;
+
+  height: 65px;
+  width: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #6C727F;
+
+}
+.asideBtnsDiv1 button:active{
+  color: #FFFFFF;
+  background-color: #1F222A;
+}
+.asideBtnsDiv1 button:hover{
+  background-color: rgba(255, 255, 255, 0.05);
+
+}
+.asideBtnsDiv2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  }
+.asideBtnsDiv2 button{
+  padding: 20px;
+  background-color: #24252D;
+  height: 60px;
+  width: 60px;
+  display: flex;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+
+  color: #6C727F;
+
+}
+.asideBtnsDiv2 button:active{
+  color: #FFFFFF;
+  background-color: #1F222A;
+}
+.asideBtnsDiv2 button:hover{
+  background-color: rgba(255, 255, 255, 0.05);
+}
+.asideBtnsDiv2 h3{
+  color: #6C727F;
+  margin-top: 0;
+
+}
+a{
+  color: chartreuse;
+  /* margin: 2px; */
+}
+.navvv{
+  gap: 5px;
+  display: flex;
+  flex-direction: column;
+}

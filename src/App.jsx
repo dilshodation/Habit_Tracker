@@ -1,17 +1,27 @@
+import { Routes, Route, } from 'react-router-dom'
 import './App.css'
-import Dashboard from "./pages/Dashboard"
-import AddHabitModal from './components/AddHabitModal'
+import A from "./components/A"
+
+import style from './App.module.css'
+import LogIn from './LogIn'
 import Habitwise from './Habitwise'
 function App() {
 
 
   return (
+
     <>
-    <Dashboard/>
-    <AddHabitModal/>
-    <Habitwise/>
-    
+
+
+      <main>
+        <Routes>
+          <Route path='/' element={<LogIn />} />
+          <Route path='A' element={<A />} />
+          <Route path='Habitwise' element={<Habitwise />} />
+        </Routes>
+      </main>
     </>
+
   )
 }
 
