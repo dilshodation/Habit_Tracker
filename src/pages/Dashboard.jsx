@@ -5,7 +5,7 @@ import { UserContext } from '../UserContext';
 
 
 function Dashboard({openModal}) {
-  const { habit, setHabit, inputs } = useContext(UserContext)
+  const { habit} = useContext(UserContext)
   let getGreeting = () => {
     let hours = new Date().getHours()
     if (

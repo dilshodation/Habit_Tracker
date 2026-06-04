@@ -4,44 +4,46 @@ import { UserContext } from './UserContext'
 import { useState } from 'react'
 import {Link, useNavigate} from 'react-router-dom'
 function LogIn() {
-
-
-  const { registerFunc, inputs,  logInputs, setLogInputs } = useContext(UserContext)
-
+  
+  
+  const { inputs,setThisUser} = useContext(UserContext)
+  
+  // const [getNameFromLocalStorage, setGetNameFromLocalStorage] = useState()
+  
+  // let VargetNameFromLocalStorage= JSON.parse(localStorage.getItem(`users`))
+  // console.log(VargetNameFromLocalStorage)
+  
 const navigate = useNavigate()
 
-  const [logInp1, setLogInp1] = useState(``);
-  const [logInp2, setLogInp2] = useState(``);
+const [logInp1, setLogInp1] = useState(``);
+const [logInp2, setLogInp2] = useState(``);
 
 const handleLogin =()=>{
-
-
+  
+  
  let users = `users`
 
-let getLocalStorage = JSON.parse(localStorage.getItem(users))
-let returnArray = getLocalStorage.find((item)=>{
+ let getLocalStorage = JSON.parse(localStorage.getItem(users))
+ let returnArray = getLocalStorage.find((item)=>{
 
 return(
 item.email === logInp1 && item.password === logInp2
 )
 })
-// console.log(returnArray)
+
 if (returnArray){
 alert(`Hamma Ma'lumot to'gri`)
-setLogInputs([...logInputs,{
-email: logInp1,
-password : logInp2
-}])
+setThisUser(returnArray)
 navigate(`/A`)
 }
 else{
-alert(`Ma'lumot xato`)
+  alert(`Ma'lumot xato`)
 }
 }
  
 
-  return (
-    <div className={style.LogInBigDiv}>
+return (
+  <div className={style.LogInBigDiv}>
       <div className={style.LogInWrapperDiv}>
         <h1>Log In</h1>
         <h3 className={style.LogInWrapperH3}>Welcome back,{inputs[0]?.name} ! Please enter your

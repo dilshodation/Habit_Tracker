@@ -4,7 +4,8 @@ import { use, useState } from 'react'
 import { UserContext } from './UserContext'
 import { useContext } from 'react'
 function AsideNavbar() {
-  const { inputs } = useContext(UserContext)
+  const { inputs,ThisUser } = useContext(UserContext)
+  console.log(ThisUser)
   return (
     <div className={style.asideNavbarBigDiv}>
       {/* <h1 className={style.hh1}>oeeeeeeee</h1> */}
@@ -23,7 +24,7 @@ function AsideNavbar() {
       </div>
       <div className={style.asideBtnsDiv2}>
         <button></button>
-        <h3>{inputs[0]?.name}</h3>
+        <h3>{ThisUser.name}</h3>
       </div>
     </div>
   )

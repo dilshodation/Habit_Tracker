@@ -5,7 +5,7 @@ export const UserContext = createContext();
 function Provider({ children }) {
 
   const [inputs, setInputs] = useState([]);
-  const [logInputs, setLogInputs] = useState([]);
+  const [ThisUser, setThisUser] = useState([]);
 
 
   let [habit, setHabit] = useState([
@@ -16,33 +16,12 @@ function Provider({ children }) {
       percent: 0,
       habitStickers: '🔥',
       habitBgColor: '#3B82F6',
-      checkbox: false
-
+      checkbox: false,
     },
-    // {
-    //   id: 2,
-    //   name: `Read`,
-    //   day: 12,
-    //   percent: 50,
-    //   habitStickers: '📖',
-    //   habitBgColor: '#22C55E',
-    //   checkbox: false
-
-    // },
-    // {
-    //   id: 3,
-    //   name: `Meditate`,
-    //   day: 3,
-    //   percent: 30,
-    //   habitStickers: '🧘‍♂️',
-    //   habitBgColor: '#7B61FF',
-    //   checkbox: false
-
-
-
-    // }
 
   ]);
+
+  console.log(ThisUser.habit)
 
   function editPercent(id, percent) {
     let editPercent = habit.map((e) => {
@@ -78,16 +57,14 @@ function Provider({ children }) {
   }])
 }
 
-  // function LogInFunc(logInpEmail,logInpPassword) {
     
-  // }
+
 
 
 
 
   return (
-    //// savol: nimaga inputs chaqiriklgan , setInputs emas
-    <UserContext.Provider value={{ habit, setHabit, inputs, registerFunc, editPercent ,setLogInputs, logInputs }}>
+    <UserContext.Provider value={{ habit, setHabit, inputs, registerFunc, editPercent,ThisUser, setThisUser}}>
       {children}
     </UserContext.Provider>
   )
@@ -97,3 +74,4 @@ function Provider({ children }) {
 
 
 export default Provider
+

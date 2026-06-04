@@ -5,7 +5,7 @@ import { CiCirclePlus } from "react-icons/ci";
 
 
 function Habitwise() {
-  const { registerFunc, inputs, setInputs } = useContext(UserContext)
+  const { registerFunc, inputs, setInputs, habit } = useContext(UserContext)
   // const {inputs , setInputs} = useContext(UserContext)
   const [input1, setInput1] = useState(``);
   const [input2, setInput2] = useState(``);
@@ -52,7 +52,6 @@ function Habitwise() {
             let users = `users`
             let inputs;
             let get = JSON.parse(localStorage.getItem(users))
-            console.log(get)
             if (get === null) {
               inputs = [
                 {
@@ -60,7 +59,16 @@ function Habitwise() {
                   name: input1,
                   email: input2,
                   password: input3,
-                  telephoneNumber: input4
+                  telephoneNumber: input4,
+                  habit:{
+                    id: 1,
+                    name: `Workout`,
+                    day: 5,
+                    percent: 0,
+                    habitStickers: '🔥',
+                    habitBgColor: '#3B82F6',
+                    checkbox: false,
+                  }
                 }
               ]
             } else {
