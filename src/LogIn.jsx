@@ -33,7 +33,8 @@ item.email === logInp1 && item.password === logInp2
 
 if (returnArray){
 alert(`Hamma Ma'lumot to'gri`)
-setThisUser(returnArray)
+// setThisUser(returnArray)
+sessionStorage.setItem(`ddd`, JSON.stringify(returnArray))
 navigate(`/A`)
 }
 else{

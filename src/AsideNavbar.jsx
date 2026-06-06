@@ -1,11 +1,12 @@
 import style from './AsideNavbar.module.css'
 import { Link } from 'react-router-dom'
-import { use, useState } from 'react'
-import { UserContext } from './UserContext'
-import { useContext } from 'react'
+// import { use, useState,useEffect } from 'react'
+// import { UserContext } from './UserContext'
+// import { useContext } from 'react'
 function AsideNavbar() {
-  const { inputs,ThisUser } = useContext(UserContext)
-  console.log(ThisUser)
+  // const { inputs,ThisUser } = useContext(UserContext)
+      let uer = JSON.parse(sessionStorage.getItem('ddd'))
+  console.log(uer.name)
   return (
     <div className={style.asideNavbarBigDiv}>
       {/* <h1 className={style.hh1}>oeeeeeeee</h1> */}
@@ -24,7 +25,7 @@ function AsideNavbar() {
       </div>
       <div className={style.asideBtnsDiv2}>
         <button></button>
-        <h3>{ThisUser.name}</h3>
+        <h3>{uer.name}</h3>
       </div>
     </div>
   )

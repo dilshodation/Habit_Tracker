@@ -60,15 +60,15 @@ function Habitwise() {
                   email: input2,
                   password: input3,
                   telephoneNumber: input4,
-                  habit:{
-                    id: 1,
-                    name: `Workout`,
-                    day: 5,
-                    percent: 0,
-                    habitStickers: '🔥',
-                    habitBgColor: '#3B82F6',
-                    checkbox: false,
-                  }
+                  // habit:{
+                  //   id: 1,
+                  //   name: `Workout`,
+                  //   day: 5,
+                  //   percent: 0,
+                  //   habitStickers: '🔥',
+                  //   habitBgColor: '#3B82F6',
+                  //   checkbox: false,
+                  // }
                 }
               ]
             } else {

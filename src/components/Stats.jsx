@@ -5,10 +5,10 @@ import {Link} from 'react-router-dom'
 
 function Stats (){
   const {habit} = useContext(UserContext)
-  function reducee(pr1,pr2){
-    return pr1+pr2.day
-  }
-  let varrr = habit.reduce(reducee)
+  // function reducee(pr1,pr2){
+  //   return pr1+pr2.day
+  // }
+  // let varrr = habit.reduce(reducee)
   // console.log(varrr)
   return(
 
@@ -18,7 +18,7 @@ function Stats (){
 
   <div className={style.statsSmallDiv}>
 <h3>Total Habits</h3>
-<h1 className={style.statsTotalHabits}>{habit.length}</h1>
+<h1 className={style.statsTotalHabits}>{5}</h1>
 <p>Active Habits</p>
   </div>
   <div className={style.statsSmallDiv}>
