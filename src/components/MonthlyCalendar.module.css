@@ -1,0 +1,70 @@
+/* src/components/MonthlyCalendar.module.css */
+
+.calendarContainer {
+  width: 100%;             /* O'z ustunining kengligiga to'liq moslashadi */
+  max-width: 680px;        /* Heatmap bilan bir xil maksimal kenglik */
+  padding: 24px;
+  background-color: #1E2129;
+  border-radius: 24px;
+  border: 1px solid #3e404d;
+  box-sizing: border-box;
+}
+
+:global(.react-calendar) {
+  background: transparent !important;
+  border: none !important;
+  color: #ffffff !important;
+  font-family: sans-serif;
+  width: 100% !important; 
+}
+
+:global(.react-calendar__navigation button) {
+  color: #ffffff !important;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+:global(.react-calendar__navigation button:enabled:hover) {
+  background-color: #2C313C !important;
+  border-radius: 8px;
+}
+
+:global(.react-calendar__tile) {
+  color: #ffffff !important;
+  padding: 12px 6px !important;
+  font-size: 13px;
+}
+
+:global(.react-calendar__tile:enabled:hover) {
+  background-color: #2C313C !important;
+  border-radius: 8px;
+}
+
+:global(.react-calendar__tile--active) {
+  background: #39d353 !important;
+  color: #000000 !important;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+:global(.react-calendar__month-view__weekdays__weekday) {
+  color: #8E929D !important;
+}
+
+.dotContainer {
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+  margin-top: 5px;
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.habitDot1 { background-color: #FF6B6B; }
+.habitDot2 { background-color: #5D9CEC; }
+.habitDot3 { background-color: #48C9B0; }

@@ -1,46 +1,56 @@
-import { useContext , useEffect } from "react";
+import js from "@eslint/js";
+import { useContext, useEffect } from "react";
 import { createContext, useState } from "react";
+import { data } from "react-router-dom";
 
 export const UserContext = createContext();
 function Provider({ children }) {
 
   const [inputs, setInputs] = useState([]);
   const [ThisUser, setThisUser] = useState([]);
-  // sessionStorage.setItem(`ddd`, ThisUser.name)
-//  const dd = sessionStorage.getItem(`ddd`)
-//  console.log(dd)
-//  console.log(ThisUser)
+  let [habit, setHabit] = useState([]);
+  
+  useEffect(()=>{
+const getFromSessionStorage = sessionStorage.getItem(`ddd`);
+setThisUser(JSON.parse(getFromSessionStorage))
+  },[])
 
-//  console.log(sesStor)
-// sessionStorage.setItem(`key`,`dilshodation`)
-// alert(sessionStorage.getItem(`key`))
+  useEffect(()=>{
+    if(!ThisUser) return
 
-  let [habit, setHabit] = useState([
-    {
-      id: 1,
-      name: `Workout`,
-      day: 5,
-      percent: 0,
-      habitStickers: '🔥',
-      habitBgColor: '#3B82F6',
-      checkbox: false,
+    const userKey = `userKey ${ThisUser.id}` 
+    
+    const data = localStorage.getItem(userKey)
+    if(data){
+      
+      setHabit(JSON.parse(data))
+    }else{
+      setHabit([])
     }
-  ]);
+  },[ThisUser])
+
+useEffect(()=>{
+  if(!ThisUser) return
+  const userKey = `userKey ${ThisUser.id}`
+localStorage.setItem(userKey,JSON.stringify(habit))
+},[habit])
 
 
-  function editPercent(id, percent) {
+function editPercent(id, percent) {
+    const sanaString = new Date().toISOString().split('T')[0];
+    console.log(sanaString)
     let editPercent = habit.map((e) => {
 
 
       if (e.id === id) {
-        if (e.checkbox === false) {
-          return { ...e, percent: percent, checkbox: !e.checkbox }
-
+        if(e.percent >= 98){
+          return { ...e, percent:  100}
         }
-        else {
-          return { ...e, percent: percent - percent, checkbox: !e.checkbox }
-
+        
+        else{
+          return { ...e, percent: e.percent + percent }
         }
+      
       }
       else {
         return { ...e }
@@ -51,25 +61,25 @@ function Provider({ children }) {
   }
 
 
- function registerFunc(inpId, input1, input2, input3, input4){
+  function registerFunc(inpId, input1, input2, input3, input4) {
 
-  setInputs([...inputs,{
-    id : inpId,
-    name: input1,
-    email : input2,
-    password : input3,
-    telephoneNumber : input4
-  }])
-}
+    setInputs([...inputs, {
+      id: inpId,
+      name: input1,
+      email: input2,
+      password: input3,
+      telephoneNumber: input4
+    }])
+  }
 
-    
+
 
 
 
 
 
   return (
-    <UserContext.Provider value={{ habit, setHabit, inputs, registerFunc, editPercent,ThisUser, setThisUser}}>
+    <UserContext.Provider value={{ habit, setHabit, inputs, registerFunc, editPercent, ThisUser, setThisUser }}>
       {children}
     </UserContext.Provider>
   )

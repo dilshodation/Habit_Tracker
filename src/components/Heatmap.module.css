@@ -1,11 +1,11 @@
 /* src/components/Heatmap.module.css */
 
 .heatmapContainer {
-  width: 700px;         /* 550px dan 700px ga oshirildi */
-  padding: 30px;
-  margin: 10px;
+  width: 100%;             /* Qat'iy piksel o'chirildi, endi o'z qutisini to'liq egallaydi */
+  max-width: 680px;        /* Haddan tashqari cho'zilib ketmasligi uchun chegara */
+  padding: 24px;
   background-color: #1E2129;
-  border-radius: 28px;
+  border-radius: 24px;
   border: 1px solid #3e404d;
   box-sizing: border-box;
 }
@@ -13,11 +13,10 @@
 .heatmapTitle {
   color: #ffffff;
   margin-top: 0;
-  margin-bottom: 20px;
-  font-size: 24px;
+  margin-bottom: 15px;
+  font-size: 20px;
 }
 
-/* Kutubxona katakchalarini to'liq 700px qutiga moslash */
 :global(.react-calendar-heatmap) {
   width: 100%;
 }
@@ -26,7 +25,6 @@
   fill: #2C313C;
 }
 
-/* Faollik ranglari (Sizda skrinshotda qora bo'lib turgan joylarni yashil qilish uchun) */
 :global(.react-calendar-heatmap) .color-scale-1 { fill: #0e4429; }
 :global(.react-calendar-heatmap) .color-scale-2 { fill: #006d32; }
 :global(.react-calendar-heatmap) .color-scale-3 { fill: #26a641; }
@@ -34,5 +32,5 @@
 
 :global(.react-calendar-heatmap) text {
   fill: #8E929D;
-  font-size: 11px; /* Yozuvlarni ham bir oz kattalashtirdik */
+  font-size: 10px;
 }

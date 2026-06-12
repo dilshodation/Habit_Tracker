@@ -8,10 +8,6 @@ function LogIn() {
   
   const { inputs,setThisUser} = useContext(UserContext)
   
-  // const [getNameFromLocalStorage, setGetNameFromLocalStorage] = useState()
-  
-  // let VargetNameFromLocalStorage= JSON.parse(localStorage.getItem(`users`))
-  // console.log(VargetNameFromLocalStorage)
   
 const navigate = useNavigate()
 
@@ -25,16 +21,16 @@ const handleLogin =()=>{
 
  let getLocalStorage = JSON.parse(localStorage.getItem(users))
  let returnArray = getLocalStorage.find((item)=>{
-
-return(
-item.email === logInp1 && item.password === logInp2
-)
-})
+   
+   return(
+     item.email === logInp1 && item.password === logInp2
+     )
+    })
 
 if (returnArray){
 alert(`Hamma Ma'lumot to'gri`)
-// setThisUser(returnArray)
 sessionStorage.setItem(`ddd`, JSON.stringify(returnArray))
+setThisUser(returnArray)
 navigate(`/A`)
 }
 else{

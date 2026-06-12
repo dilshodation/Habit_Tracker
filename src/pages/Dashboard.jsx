@@ -4,8 +4,8 @@ import { useContext } from 'react';
 import { UserContext } from '../UserContext';
 
 
-function Dashboard({openModal}) {
-  const { habit} = useContext(UserContext)
+function Dashboard({ openModal }) {
+  const { setHabit, habit } = useContext(UserContext)
   let getGreeting = () => {
     let hours = new Date().getHours()
     if (
@@ -92,7 +92,7 @@ export default Dashboard
 
 
 
-function BlockOptions({ namee, dayss, blockOptionClass, change, addHabitStickers, id, checkbox }) {
+function BlockOptions({ namee, dayss, blockOptionClass, change, addHabitStickers, id }) {
   const { habit, setHabit, editPercent } = useContext(UserContext)
 
   return (
@@ -106,11 +106,18 @@ function BlockOptions({ namee, dayss, blockOptionClass, change, addHabitStickers
 
       <nav className={style.nav2}>
         <h3 className={style.nav2H3}>  {dayss} days streak</h3>
-        <input type="checkbox" checked={checkbox}
-          onChange={() => {
-            editPercent( id,Math.round( 100 / dayss))
-          }}
-        />
+ <button style={{fontSize: `12px` }} onClick={()=>{
+ const deleteHabit = habit.filter((item)=>{
+    return(
+      item.id !== id
+      )
+    })
+    setHabit(deleteHabit)
+ }}>del</button>
+       <button 
+          onClick={() => {
+            editPercent(id, Math.round(100 / dayss))
+          }}>add</button>
       </nav>
       <div className={style.nav3}>
         <nav className={style.nav4}>

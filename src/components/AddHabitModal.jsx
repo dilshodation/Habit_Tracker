@@ -9,7 +9,7 @@ function AddHabitModal({closeModal}) {
   const [colorBt, setcolorBt] = useState(``)
   const [iconBt, setIconBt] = useState(``)
   const [dayBt, setDayBt] = useState(0);
-  const [countPercent, setCountPercent] = useState(4);
+  // const [countPercent, setCountPercent] = useState(4);
 
 
   const colors = [
@@ -183,18 +183,17 @@ function AddHabitModal({closeModal}) {
           onClick={() => {
             if (inp !== `` && dayBt !== `` && iconBt !== `` && colorBt !== ``) {
               setHabit([...habit, {
-                id: countPercent,
+                id: Date.now(),
                 name: inp,
                 day: dayBt,
                 percent: 0,
                 habitStickers: iconBt,
                 habitBgColor: colorBt,
-                checkbox: false
 
                 
   
               }])
-              setCountPercent(countPercent + 1)
+              // setCountPercent(countPercent + 1)
               setInpValue(``)
               setDayBt(``)
               setIconBt(``)

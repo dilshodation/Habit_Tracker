@@ -6,12 +6,10 @@ import { CiCirclePlus } from "react-icons/ci";
 
 function Habitwise() {
   const { registerFunc, inputs, setInputs, habit } = useContext(UserContext)
-  // const {inputs , setInputs} = useContext(UserContext)
   const [input1, setInput1] = useState(``);
   const [input2, setInput2] = useState(``);
   const [input3, setInput3] = useState(``);
   const [input4, setInput4] = useState(``);
-  const [inpId, setInpId] = useState(1)
 
 
   return (
@@ -43,8 +41,8 @@ function Habitwise() {
 
         <button
           onClick={() => {
-            registerFunc(inpId, input1, input2, input3, input4)
-            setInpId(inpId + 1)
+            registerFunc( input1, input2, input3, input4)
+            // setInpId(inpId + 1)
             function checkEmailFunc(item) {
             return  item.email === input2
             }
@@ -52,23 +50,18 @@ function Habitwise() {
             let users = `users`
             let inputs;
             let get = JSON.parse(localStorage.getItem(users))
+            if(input1 ===`` && input2===`` && input3===`` && input4===``){
+              alert(`inputni toldiring`)
+              return
+            }
             if (get === null) {
               inputs = [
                 {
-                  id: inpId,
+                  id: Date.now(),
                   name: input1,
                   email: input2,
                   password: input3,
                   telephoneNumber: input4,
-                  // habit:{
-                  //   id: 1,
-                  //   name: `Workout`,
-                  //   day: 5,
-                  //   percent: 0,
-                  //   habitStickers: '🔥',
-                  //   habitBgColor: '#3B82F6',
-                  //   checkbox: false,
-                  // }
                 }
               ]
             } else {
@@ -81,7 +74,7 @@ function Habitwise() {
               inputs = [
                 ...get,
                 {
-                  id: inpId,
+                  id: Date.now(),
                   name: input1,
                   email: input2,
                   password: input3,

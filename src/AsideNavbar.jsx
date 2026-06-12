@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 function AsideNavbar() {
   // const { inputs,ThisUser } = useContext(UserContext)
       let uer = JSON.parse(sessionStorage.getItem('ddd'))
-  console.log(uer.name)
+  // console.log(uer.name)
   return (
     <div className={style.asideNavbarBigDiv}>
       {/* <h1 className={style.hh1}>oeeeeeeee</h1> */}
