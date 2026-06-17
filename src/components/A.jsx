@@ -12,9 +12,11 @@ import MonthlyCalendar from './MonthlyCalendar' // Yangi kalendarni import qilam
 
 function A (){
   const [isModalOpen,setIsModalOpen] = useState(false)
+
   return(
     <div className={style.mainDiv} >
-      <AsideNavbar/>
+      
+    <AsideNavbar/>
       <div className={style.leftsideDiv}>
 
       <Heatmap/>
@@ -23,6 +25,7 @@ function A (){
       <div className={style.rightsideDiv}>
       <Dashboard openModal={()=>{setIsModalOpen(true)}} />
       <Stats/>
+      
       </div>
      {isModalOpen && <AddHabitModal closeModal={()=>{setIsModalOpen(false)}}/>}
     </div>

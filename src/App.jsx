@@ -16,8 +16,8 @@ function App() {
       <main>
         <Routes>
           <Route path='/' element={<LogIn />} />
-          <Route path='A' element={<A />} />
-          <Route path='Habitwise' element={<Habitwise />} />
+          <Route path='/A' element={<A />} />
+          <Route path='/Habitwise' element={<Habitwise />} />
         </Routes>
       </main>
     </>

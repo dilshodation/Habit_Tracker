@@ -6,7 +6,7 @@ import {Link, useNavigate} from 'react-router-dom'
 function LogIn() {
   
   
-  const { inputs,setThisUser} = useContext(UserContext)
+  const { inputs,setThisUser, file, setFile} = useContext(UserContext)
   
   
 const navigate = useNavigate()
@@ -50,11 +50,11 @@ return (
           <h3 className={style.inpH3}>Email Adress</h3>
           <input onChange={(e) => {
             setLogInp1(e.target.value)
-          }} type="email" placeholder='@email.com' />
+          }} type="text" placeholder='@email.com' />
           <h3 className={style.inpH3}>Password</h3>
           <input onChange={(e) => {
             setLogInp2(e.target.value)
-          }} type="text" />
+          }} type="password" />
 
         </div>
         <h4 className={style.forgotPasswordH4}>Forgot Password</h4>

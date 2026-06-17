@@ -1,11 +1,10 @@
 /* src/components/MonthlyCalendar.module.css */
 
 .calendarContainer {
-  width: 100%;             /* O'z ustunining kengligiga to'liq moslashadi */
-  max-width: 680px;        /* Heatmap bilan bir xil maksimal kenglik */
-  padding: 24px;
+  width: 100%;             /* leftsideDiv'ning 580px kengligini to'liq oladi */
+  padding: 20px;           /* Ichki bo'shliq biroz kamaytirildi */
   background-color: #1E2129;
-  border-radius: 24px;
+  border-radius: 28px;
   border: 1px solid #3e404d;
   box-sizing: border-box;
 }
@@ -18,49 +17,50 @@
   width: 100% !important; 
 }
 
+/* Oy sarlavhalari (June 2026 - July 2026) */
 :global(.react-calendar__navigation button) {
   color: #ffffff !important;
-  font-size: 16px;
+  font-size: 14px !important; /* Shrift sal kichraydi */
   font-weight: bold;
 }
 
-:global(.react-calendar__navigation button:enabled:hover) {
-  background-color: #2C313C !important;
-  border-radius: 8px;
-}
-
+/* MUHIM: Kun katakchalari sig'ishi uchun o'lchamlar */
 :global(.react-calendar__tile) {
   color: #ffffff !important;
-  padding: 12px 6px !important;
-  font-size: 13px;
+  padding: 8px 2px !important;  /* Katakchalarni eniga va bo'yiga ixcham qildik */
+  font-size: 11px !important;   /* Raqamlar shrifti sal kichraytirildi */
 }
 
 :global(.react-calendar__tile:enabled:hover) {
   background-color: #2C313C !important;
-  border-radius: 8px;
+  border-radius: 6px;
 }
 
 :global(.react-calendar__tile--active) {
   background: #39d353 !important;
   color: #000000 !important;
-  border-radius: 8px;
+  border-radius: 6px;
   font-weight: bold;
 }
 
+/* Haftalik kun nomlari (Sun, Mon...) */
 :global(.react-calendar__month-view__weekdays__weekday) {
   color: #8E929D !important;
+  font-size: 11px !important;
+  padding: 3px 0 !important;
 }
 
+/* Kunlar tagidagi nuqtalar */
 .dotContainer {
   display: flex;
   justify-content: center;
-  gap: 3px;
-  margin-top: 5px;
+  gap: 2px;
+  margin-top: 2px;
 }
 
 .dot {
-  width: 5px;
-  height: 5px;
+  width: 4px;
+  height: 4px;
   border-radius: 50%;
   display: inline-block;
 }

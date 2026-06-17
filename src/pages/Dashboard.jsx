@@ -5,7 +5,7 @@ import { UserContext } from '../UserContext';
 
 
 function Dashboard({ openModal }) {
-  const { setHabit, habit } = useContext(UserContext)
+  const { setHabit, habit , dayBt, dayInp, setDayBt,setDayInp} = useContext(UserContext)
   let getGreeting = () => {
     let hours = new Date().getHours()
     if (
@@ -79,7 +79,7 @@ function Dashboard({ openModal }) {
         {
           habit.map((items) => {
             return (
-              <BlockOptions key={items.id} checkbox={items.checkbox} id={items.id} addHabitStickers={items.habitStickers} blockOptionClass={items.habitBgColor} namee={items.name} dayss={items.day} change={items.percent} />
+              <BlockOptions key={items.id} checkbox={items.checkbox} id={items.id} addHabitStickers={items.habitStickers} blockOptionClass={items.habitBgColor}  namee={items.name} dayss={items.day} change={items.percent} />
             )
           })
         }
@@ -92,8 +92,8 @@ export default Dashboard
 
 
 
-function BlockOptions({ namee, dayss, blockOptionClass, change, addHabitStickers, id }) {
-  const { habit, setHabit, editPercent } = useContext(UserContext)
+function BlockOptions({ namee, dayss,  blockOptionClass, change, addHabitStickers, id }) {
+  const { habit, setHabit, dayInp,setDayInp, dayBt, setDayBt, editPercent , } = useContext(UserContext)
 
   return (
     <div className={style.blockOptions} style={{ backgroundColor: blockOptionClass }}>
@@ -116,7 +116,17 @@ function BlockOptions({ namee, dayss, blockOptionClass, change, addHabitStickers
  }}>del</button>
        <button 
           onClick={() => {
-            editPercent(id, Math.round(100 / dayss))
+            if(dayss <=0){
+              alert(`0 sonidan katta son yozing`)
+              return
+            }
+            let  step = 100/dayss
+            let newPercent = change + step
+            if(newPercent >100){
+              newPercent = 100
+            }
+            editPercent(id, Math.round(newPercent))
+            
           }}>add</button>
       </nav>
       <div className={style.nav3}>

@@ -1,38 +1,109 @@
-/* src/components/Heatmap.module.css */
-
-.heatmapContainer {
-  width: 700px;         /* 550px dan 700px ga oshirildi */
-  padding: 30px;
-  margin: 10px;
-  background-color: #1E2129;
-  border-radius: 28px;
-  border: 1px solid #3e404d;
-  box-sizing: border-box;
+.HabitwiseCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #0f1116;
+  position: relative;
+  margin: 0;
+  height: 100vh;
 }
 
-.heatmapTitle {
-  color: #ffffff;
-  margin-top: 0;
+.HabitwiseWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  width: 500px;
+  background-color: rgba(30, 35, 45, 0.7);
+  backdrop-filter: blur(15px);
+  padding: 25px;
+  border-radius: 20px;
+}
+
+.HabitwiseWrapper h1 {
+  color: white;
+  font-size: 27px;
+}
+
+.userPhotoDiv {
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  border: 2px dashed#8768ea;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  align-items: center;
+  margin-top: 15px;
+
+}
+img{
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  position: absolute;
+}
+.imgInp{
+/* display: none; */
+}
+
+
+
+.hh3 {
+  color: white;
+  font-size: 14px;
+  margin-top: 12px;
   margin-bottom: 20px;
-  font-size: 24px;
 }
 
-/* Kutubxona katakchalarini to'liq 700px qutiga moslash */
-:global(.react-calendar-heatmap) {
+.inputsDiv {
+  width: 90%;
+  text-align: left;
+}
+
+.inputsDiv input {
+  background: #1a1d23;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  border-radius: 12px;
   width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  font-size: 15px;
 }
 
-:global(.react-calendar-heatmap) .color-empty {
-  fill: #2C313C;
+.inputsDiv input:focus {
+  outline: none;
+  border-color: #6636cb;
+  box-shadow: 0 0 0 4px rgba(102, 54, 203, 0.25),
+              0 4px 15px rgba(102, 54, 203, 0.1);
 }
 
-/* Faollik ranglari (Sizda skrinshotda qora bo'lib turgan joylarni yashil qilish uchun) */
-:global(.react-calendar-heatmap) .color-scale-1 { fill: #0e4429; }
-:global(.react-calendar-heatmap) .color-scale-2 { fill: #006d32; }
-:global(.react-calendar-heatmap) .color-scale-3 { fill: #26a641; }
-:global(.react-calendar-heatmap) .color-scale-4 { fill: #39d353; }
+.inputsDiv input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
 
-:global(.react-calendar-heatmap) text {
-  fill: #8E929D;
-  font-size: 11px; /* Yozuvlarni ham bir oz kattalashtirdik */
+.createBtn {
+  background: linear-gradient(90deg, #8768ea, #6636cb);
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(102, 54, 203, 0.4);
+  padding: 15px;
+  margin-top: 15px;
+  border-radius: 25px;
+  border: none;
+  font-size: 13px;
+  width: 90%;
+  cursor: pointer;
+}
+
+.createBtn:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 24px rgba(102, 54, 203, 0.5);
+}
+
+.createBtn:active {
+  transform: scale(0.95);
 }

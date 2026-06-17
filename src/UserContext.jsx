@@ -36,28 +36,22 @@ localStorage.setItem(userKey,JSON.stringify(habit))
 },[habit])
 
 
-function editPercent(id, percent) {
+function editPercent(id, newPercent) {
     const sanaString = new Date().toISOString().split('T')[0];
     console.log(sanaString)
-    let editPercent = habit.map((e) => {
+    let updateHabit = habit.map((e) => {
 
 
       if (e.id === id) {
-        if(e.percent >= 98){
-          return { ...e, percent:  100}
+        
+          return { ...e, percent:  newPercent}
         }
         
-        else{
-          return { ...e, percent: e.percent + percent }
-        }
+       return e 
       
-      }
-      else {
-        return { ...e }
-      }
 
     })
-    setHabit(editPercent)
+    setHabit(updateHabit)
   }
 
 

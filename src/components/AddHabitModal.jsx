@@ -8,7 +8,8 @@ function AddHabitModal({closeModal}) {
   const [inp, setInpValue] = useState(``)
   const [colorBt, setcolorBt] = useState(``)
   const [iconBt, setIconBt] = useState(``)
-  const [dayBt, setDayBt] = useState(0);
+  const [dayBt, setDayBt] = useState(``);
+  const[dayInp,setDayInp] = useState(``)
   // const [countPercent, setCountPercent] = useState(4);
 
 
@@ -166,6 +167,9 @@ function AddHabitModal({closeModal}) {
               </button>
             ))
           }
+          <input onChange={(e)=>{
+            setDayInp(e.target.value)
+          }} type="text" />
         </section>
       </div>
       <div className={style.cancelSaveButtonsDiv}>
@@ -173,6 +177,7 @@ function AddHabitModal({closeModal}) {
           onClick={() => {
             setInpValue(``)
             setDayBt(``)
+            setDayInp(``)
             setIconBt(``)
             setcolorBt(``)
             closeModal()
@@ -180,12 +185,22 @@ function AddHabitModal({closeModal}) {
           }}
         >Cancel</button>
         <button className={style.saveButton}
+
+      
           onClick={() => {
-            if (inp !== `` && dayBt !== `` && iconBt !== `` && colorBt !== ``) {
+            let finalDay = ()=>{
+              if(dayInp){
+               return dayInp
+              }else{
+               return dayBt
+              }
+            }
+            
+            if (inp !== `` && (dayBt !== ``|| dayInp !== ``) && iconBt !== `` && colorBt !== ``) {
               setHabit([...habit, {
                 id: Date.now(),
                 name: inp,
-                day: dayBt,
+                day: finalDay(),
                 percent: 0,
                 habitStickers: iconBt,
                 habitBgColor: colorBt,
@@ -196,6 +211,7 @@ function AddHabitModal({closeModal}) {
               // setCountPercent(countPercent + 1)
               setInpValue(``)
               setDayBt(``)
+              setDayInp(``)
               setIconBt(``)
               setcolorBt(``)
               closeModal()

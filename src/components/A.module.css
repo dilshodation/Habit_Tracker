@@ -4,26 +4,27 @@
   display: flex;
   background-color: #0d1117; 
   min-height: 100vh;
-  width: 100vw;
+  width: 100%;
   box-sizing: border-box;
 }
 
-/* Chap ustun (Heatmap va Calendar) */
+/* Chap ustun (Heatmap va Calendar uchun) */
 .leftsideDiv {
-  flex: 1.3;               /* O'ng tomondan qisman kattaroq joy oladi */
+  width: 580px;           /* Kalendar va Heatmap erkin, lekin chegaralangan holda sig'adi */
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  padding: 20px;
+  gap: 25px;
+  padding: 30px 15px 30px 30px;
   box-sizing: border-box;
 }
 
-/* O'ng ustun (Dashboard va Stats) */
+/* O'ng ustun (Dashboard va Stats uchun) */
 .rightsideDiv {
-  flex: 1;                 /* Chap tomonga qaraganda ixchamroq joy oladi */
+  width: 550px;           /* Dashboard va Stats o'lchamiga mos */
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  padding: 20px;
+  gap: 25px;
+  padding: 30px 30px 30px 15px;
   box-sizing: border-box;
+  margin-left: 200px; /* Agar masofa kamlik qilsa 40px yoki 50px qilib ko'ring */
 }
