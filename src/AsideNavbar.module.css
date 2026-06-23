@@ -1,16 +1,22 @@
-.hh1{
-  /* font-size: 10px; */
-  color: white;
+:root{
+  --bg : #24252D;
+  --border: #3e404d;
+  --text: #ffffff;
 }
+.BgColor{
+--bg: #FFFFFF ;
+--border:black;
+--text:black;
+}
+
 .asideNavbarBigDiv{
+  background-color: var(--bg);
   padding: 15px;
-  background-color: #24252D;
-  border: 1px solid #3e404d;
+  border: 1px solid var(--border);
   border-top-left-radius: 28px;
   border-bottom-left-radius: 28px;
-
-
-
+  margin: 10px;
+  margin-top: 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -33,7 +39,8 @@ gap: 10px;
   /* margin: auto; */
   font-size: 10px;
   font-weight: bold;
-  background-color: #24252D;
+  background-color: var(--bg);
+  /* background-color: #24252D; */
   border-radius: 10px;
 
   height: 65px;
@@ -42,11 +49,11 @@ gap: 10px;
   justify-content: center;
   align-items: center;
 
-  color: #6C727F;
+  color: var(--text);
 
 }
 .asideBtnsDiv1 button:active{
-  color: #FFFFFF;
+  color: var(--text);
   background-color: #1F222A;
 }
 .asideBtnsDiv1 button:hover{
@@ -62,7 +69,8 @@ gap: 10px;
   }
 .asideBtnsDiv2 button{
   padding: 20px;
-  background-color: #24252D;
+  background-color: var(--bg);
+  /* background-color: #24252D; */
   height: 60px;
   width: 60px;
   display: flex;
@@ -72,23 +80,23 @@ gap: 10px;
   justify-content: center;
   align-items: center;
 
-  color: #6C727F;
+  color: var(--text);
 
 }
 .asideBtnsDiv2 button:active{
-  color: #FFFFFF;
+  color: var(--text);
   background-color: #1F222A;
 }
 .asideBtnsDiv2 button:hover{
   background-color: rgba(255, 255, 255, 0.05);
 }
 .asideBtnsDiv2 h3{
-  color: #6C727F;
+  color: var(--text);
   margin-top: 0;
 
 }
 a{
-  color: chartreuse;
+  color: var(--text);
   /* margin: 2px; */
 }
 .navvv{

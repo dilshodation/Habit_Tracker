@@ -4,7 +4,7 @@ import { UserContext } from '../UserContext'
 import {Link} from 'react-router-dom'
 
 function Stats (){
-  const {habit} = useContext(UserContext)
+  const {habit,stats} = useContext(UserContext)
 
 
   let LongestStreakVariable = habit.reduce((day1, day2)=>{
@@ -27,7 +27,7 @@ if(day1 > day2.day){
  
   return(
 
-    <div className={style.statsMainDiv}>
+    <div className={`${style.statsMainDiv} ${style[stats]}`}>
 <h2>My Overview</h2>
 <div className={style.statsDiv}>
 

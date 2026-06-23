@@ -5,7 +5,7 @@ import { UserContext } from '../UserContext';
 
 
 function Dashboard({ openModal }) {
-  const { setHabit, habit , dayBt, dayInp, setDayBt,setDayInp} = useContext(UserContext)
+  const { setHabit, habit , dayBt, dayInp, setDayBt,setDayInp, dashboard} = useContext(UserContext)
   let getGreeting = () => {
     let hours = new Date().getHours()
     if (
@@ -67,7 +67,7 @@ function Dashboard({ openModal }) {
 
 
   return (
-    <div className={style.dashboardDiv}>
+    <div className={`${style.dashboardDiv} ${style[dashboard]}`}>
       <h1>{greeting}</h1>
       <nav className={style.dashboardMiniCont}>
         <h3 className={style.dashBoardDivH3}>{putMonth}{dayYear}</h3>

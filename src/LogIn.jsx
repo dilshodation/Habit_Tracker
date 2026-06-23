@@ -29,7 +29,10 @@ const handleLogin =()=>{
 
 if (returnArray){
 alert(`Hamma Ma'lumot to'gri`)
+
+// sesionStorage yuborobmiz har ehtimolga qarshi (agar noxos foydalanuvchi sahifani yangilasa!)
 sessionStorage.setItem(`ddd`, JSON.stringify(returnArray))
+
 setThisUser(returnArray)
 navigate(`/A`)
 }

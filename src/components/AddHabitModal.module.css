@@ -6,12 +6,13 @@
   border: 1px solid #3e404d;
   display:flex;
   width: 500px;
+  /* height: 600px; */
   flex-direction: column;
   color: #FFFFFF;
   padding: 30px;
   position: fixed;
+  line-height: 50px;
   transform: translate(-50%, -50%);
-  /* right: 200px; */
  left: 50%;
   top: 50%;
 }

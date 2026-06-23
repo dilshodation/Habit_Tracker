@@ -1,19 +1,20 @@
 import { Routes, Route, } from 'react-router-dom'
-import './App.css'
+import { useContext } from 'react'
+import { UserContext } from './UserContext'
 import A from "./components/A"
 
 import style from './App.module.css'
 import LogIn from './LogIn'
 import Habitwise from './Habitwise'
 function App() {
-
+const {theme} = useContext(UserContext)
 
   return (
 
     <>
 
 
-      <main>
+      <main className={style[theme]}>
         <Routes>
           <Route path='/' element={<LogIn />} />
           <Route path='/A' element={<A />} />

@@ -3,25 +3,23 @@ import { Link } from 'react-router-dom'
 import { useContext } from 'react'
 import { UserContext } from './UserContext'
 
-function AsideNavbar() {
-  const {file,setFile} = useContext(UserContext)
+function AsideNavbar({openSetting}) {
+  const {file,setFile ,asideNavbarTheme} = useContext(UserContext)
       let uer = JSON.parse(sessionStorage.getItem('ddd'))
-      console.log(file)
-
   return (
-    <div className={style.asideNavbarBigDiv}>
+    <div className={`${style.asideNavbarBigDiv} ${style[asideNavbarTheme]}`}>
       <div className={style.asideBtnsDiv1}>
-        <button></button>
-        <button>Dashboard</button>
-        <button >Analytics</button>
-        <button>Settings</button>
+        <button className={style[asideNavbarTheme]}></button>
+        <button className={style[asideNavbarTheme]}>Dashboard</button>
+        <button className={style[asideNavbarTheme]} >Analytics</button>
+        <button className={style[asideNavbarTheme]} onClick={openSetting}>Settings</button>
         <nav className={style.navvv}>
 
        
         </nav>
       </div>
       <div className={style.asideBtnsDiv2}>
-        <button></button>
+        <button className={style[asideNavbarTheme]}></button>
         
         <h3>{uer.name}</h3>
       </div>

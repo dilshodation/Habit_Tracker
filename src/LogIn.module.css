@@ -15,9 +15,11 @@ align-items:center;
 flex-direction: column;
 text-align: center;
 width:500px;
+/* padding: 30px; */
+line-height: 50px;
 background-color: rgba(30, 35, 45, 0.7);
 backdrop-filter: blur(15px);
-padding: 20px;
+padding: 30px;
 border-radius: 20px;
 }
 .LogInInputsDiv{
@@ -34,6 +36,7 @@ background: #1a1d23;
   width: 100%;
   padding: 12px;
 font-size: 15px;
+
 }
 .LogInInputsDiv input:focus{
   border-color: #6636cb;
@@ -69,7 +72,8 @@ font-size: 15px;
 }
 .inpH3{
   color:  white;
-margin-bottom: 10px;
+  
+/* margin-bottom: 10px; */
 }
 .forgotPasswordH4{
   color: #8768ea;

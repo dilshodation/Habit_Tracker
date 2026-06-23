@@ -1,12 +1,14 @@
 // src/components/Heatmap.jsx
 import React from 'react';
+import { useContext } from 'react';
 import CalendarHeatmap from 'react-calendar-heatmap';
 import 'react-calendar-heatmap/dist/styles.css'; 
+import { UserContext } from '../UserContext';
 import styles from './Heatmap.module.css'; // Module stillarni import qilish
 
 export default function Heatmap() {
   const bugun = new Date();
-  
+  const{heatmap} = useContext(UserContext)
   // Test uchun ma'lumotlar
   const data = [
     { date: '2026-04-01', count: 1 },
@@ -15,7 +17,7 @@ export default function Heatmap() {
   ];
 
   return (
-    <div className={styles.heatmapContainer}>
+    <div className={`${styles.heatmapContainer} ${styles[heatmap]}` }>
       <h3 className={styles.heatmapTitle}>Performance & Progress</h3>
       
       <CalendarHeatmap

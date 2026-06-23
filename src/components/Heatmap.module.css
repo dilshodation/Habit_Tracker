@@ -1,16 +1,25 @@
 /* src/components/Heatmap.module.css */
-
+:root{
+  --bg: #1E2129;
+  --border:#3e404d;
+  --text:#ffffff;
+}
+.heatmapTheme{
+  --bg: #ffffff;
+  --border: black;
+  --text:black;
+}
 .heatmapContainer {
   width: 100%;             /* leftsideDiv'ning 580px kengligini to'liq oladi */
   padding: 24px;
-  background-color: #1E2129;
+  background-color:var(--bg);
   border-radius: 28px;
-  border: 1px solid #3e404d;
+  border: 1px solid var(--border);
   box-sizing: border-box;
 }
 
 .heatmapTitle {
-  color: #ffffff;
+  color: var(--text);
   margin-top: 0;
   margin-bottom: 15px;
   font-size: 20px;

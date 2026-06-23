@@ -1,14 +1,32 @@
+:root{
+  --bg:#1E2129;
+  --border:#3e404d;
+  --h3P:#8E929D;
+  --text: #ffffff;
+  --progrss:white;
+  --bgBtn:white;
+
+
+}
+.dashboardTheme{
+  --bg:#ffffff;
+  --border:black;
+  --h3P:black;
+  --text: black;
+  --progrss: #ffffff;
+  --bgBtn:rgb(93, 88, 88);
+}
 .dashboardDiv {
   width: 550px;
   padding: 30px;
   margin: 10px;
-  background-color: #1E2129;
+  background-color: var(--bg);
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
   border-radius: 28px;
-  border: 1px solid #3e404d;
+  border: 1px solid var(--border);
   /* gap: 10px; */
   /* gap: 10px; */
 
@@ -51,7 +69,7 @@
 }
 
 .nav2H3 {
-  color: #2d3436;
+  /* color: var(--h3P); */
   font-weight: bold;
   margin: 0;
 }
@@ -71,12 +89,12 @@
 }
 
 .dashBoardDivH3 {
-  color: #8E929D;
+  color: var(--h3P);
   /* margin: 10px; */
 }
 
 .dashboardDiv h1 {
-  color: #FFFFFF;
+  color: var(--text);
 }
 
 .dashboardDiv button {
@@ -97,7 +115,7 @@
   position: absolute;
   width: 100px;
   left: -110px;
-  background-color: white;
+  background-color: var(--bgBtn);
   padding: 3px;
   border-radius: 5px;
   display: none;
@@ -143,7 +161,7 @@
 
 .progress {
   /* position: absolute; */
-  background-color: white;
+  background-color:var(--progrss);
   /* width: 50%; */
   height: 5px;
 }

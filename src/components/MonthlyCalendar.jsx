@@ -1,12 +1,15 @@
 // src/components/MonthlyCalendar.jsx
 import React, { useState } from 'react';
 import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css'; // Kutubxonaning asosiy stillari
+import 'react-calendar/dist/Calendar.css'; 
 import styles from './MonthlyCalendar.module.css';
+import { useContext } from 'react'
+import { UserContext } from '../UserContext'
 
 export default function MonthlyCalendar() {
   const [date, setDate] = useState(new Date());
 
+  const {calendar} = useContext(UserContext)
   // Test uchun odatlar ma'lumotlari (qaysi kuni qaysi odat bajarilgan)
   // 1 = qizil (workout), 2 = ko'k (read), 3 = yashil (meditate)
   const habitData = {
@@ -40,7 +43,7 @@ export default function MonthlyCalendar() {
   };
 
   return (
-    <div className={styles.calendarContainer}>
+    <div className={`${styles.calendarContainer} ${styles[calendar]}`}>
       <Calendar
         onChange={setDate}
         value={date}

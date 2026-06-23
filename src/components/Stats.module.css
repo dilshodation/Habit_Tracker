@@ -1,5 +1,19 @@
+:root{
+  --bg:#1E2129;
+  --border:#3e404d;
+  --inBg:#2C313C;
+  --text: #ffffff;
+  --p:#8E929D;
+}
+.statsTheme{
+  --bg:#ffffff;
+  --border:black;
+  --inBg:#FAFAFA;
+  --text:black;
+  --p:black;
+}
 .statsDiv h1{
-  color: white;
+  color: var(--text);
   font-size: 28px;
   margin-bottom: 0px;
   margin-top: 10px;
@@ -9,20 +23,20 @@
   display: flex;
   justify-content:center;
   align-items:center;
-  background-color: #1E2129;
+  background-color: var(--bg);
 
   padding: 20px;
   width:550px;
   margin: 10px;
   border-radius:28px;
-  border: 1px solid #3e404d;
+  border: 1px solid var(--border);
   flex-direction:column;
 
 }
 
 .statsSmallDiv{
-  background-color:#2C313C;
-  border: 1px solid #3e404d;
+  background-color:var(--inBg);
+  border: 1px solid var(--border);
 
   width: 35%;
   border-radius: 20px;
@@ -39,19 +53,20 @@
   
 }
 .statsMainDiv h2{
-  color: #FFFFFF;
+  color: var(--text);
+  margin-bottom: 10px;
 }
 .statsDiv h3{
-  color:#FFFFFF ;
+  color:var(--text) ;
   margin: 0;
  
 
 }
 .statsDiv p{
-  color: #FFFFFF;
+  /* color: #FFFFFF; */
   margin: 0;
   font-weight:bold;
-  color: #8E929D;
+  color:var(--p);
   
 
 }

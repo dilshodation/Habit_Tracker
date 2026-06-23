@@ -1,0 +1,87 @@
+
+.mainDiv{
+  width: 88%;
+  height: 85%;
+  position: absolute;
+  left: 140px;
+  padding: 30px;
+  /* margin: 10px; */
+  margin: -2px;
+  margin-top: 30px;
+  background-color: #1E2129;
+  border-radius: 28px;
+  border: 1px solid #3e404d;
+  display: flex;
+  /* justify-content: center; */
+  /* align-items: center; */
+  flex-direction: column;
+}
+.div1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.opt{
+background: #2B3040;
+border-radius: 28px;
+border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+  padding: 30px;
+  /* width: 100%; */
+}
+.settingDiv{
+  display:flex;
+  justify-content: space-between;
+}
+.mainDiv p{
+  color: #8E929D;
+  font-weight: bold;
+  margin: 0;
+
+}
+.settingDiv h1{
+  color: #ffff;
+}
+.optionDivs p{
+  color: #8E929D;
+  font-weight: bold;
+
+}
+.optionDivs h2{
+  color: #ffff;
+}
+select{
+  width: 400px;
+  /* padding: 5px; */
+  height: 40px;
+  background-color:#1E2129;
+  border: 1px solid black;
+color: #ffff;
+font-size: 12px;
+border-radius: 5px;
+}
+.opt button{
+  height: 40px;
+  width: 120px;
+  padding: 5px;
+  font-size:12px;
+  border-radius: 5px;
+   border:1px solid red;
+   background-color: #1E2129;
+   color: red;
+   
+}
+.opt button:active{
+  transform: scale(0.95);
+}
+.logOutIcon{
+  font-size: 40px;
+  color: red;
+}
+.earthIcon,.pencilIcon{
+  font-size: 40px;
+  color:lightskyblue;
+}

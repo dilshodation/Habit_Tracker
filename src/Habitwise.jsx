@@ -13,10 +13,11 @@ function Habitwise() {
   const [input4, setInput4] = useState(``);
   const navigate = useNavigate()
   const [file, setFile] = useState()
-  function getFile(event) {
-    setFile(URL.createObjectURL(event.target.files[0]))
-  }
-
+  // function getFile(event) {
+  //   setFile(URL.createObjectURL(event.target.files[0]))
+  // }
+  
+  console.log(file)
 
   return (
     <div className={style.HabitwiseCard}>
@@ -24,9 +25,11 @@ function Habitwise() {
         <h1>Welcome to Habitwise</h1>
         <div className={style.userPhotoDiv}>
 
-          <input className={style.imgInp} type="file" onChange={getFile} />
+          <input className={style.imgInp} type="file" onChange={(e)=>{
+            // setFile(e.target.files[0].name)
+              setFile(URL.createObjectURL(e.target.files[0]))
+          }} />
           <img src={file} />
-          {console.log(file)}
 
         </div>
 

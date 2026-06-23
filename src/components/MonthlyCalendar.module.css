@@ -1,38 +1,49 @@
 /* src/components/MonthlyCalendar.module.css */
-
+:root{
+  --bg:#1E2129;
+  --border:#3e404d;
+  --text:#ffffff;
+  --hover:#2C313C;
+}
+.calendarTheme{
+  --bg:#FFFFFF;
+  --border: black;
+  --text: black;
+  --hover:grey;
+}
 .calendarContainer {
   width: 100%;             /* leftsideDiv'ning 580px kengligini to'liq oladi */
   padding: 20px;           /* Ichki bo'shliq biroz kamaytirildi */
-  background-color: #1E2129;
+  background-color: var(--bg);
   border-radius: 28px;
-  border: 1px solid #3e404d;
+  border: 1px solid var(--border);
   box-sizing: border-box;
 }
 
 :global(.react-calendar) {
   background: transparent !important;
   border: none !important;
-  color: #ffffff !important;
+  color: var(--text) !important;
   font-family: sans-serif;
   width: 100% !important; 
 }
 
 /* Oy sarlavhalari (June 2026 - July 2026) */
 :global(.react-calendar__navigation button) {
-  color: #ffffff !important;
+  color: var(--text) !important;
   font-size: 14px !important; /* Shrift sal kichraydi */
   font-weight: bold;
 }
 
 /* MUHIM: Kun katakchalari sig'ishi uchun o'lchamlar */
 :global(.react-calendar__tile) {
-  color: #ffffff !important;
+  color: var(--text) !important;
   padding: 8px 2px !important;  /* Katakchalarni eniga va bo'yiga ixcham qildik */
   font-size: 11px !important;   /* Raqamlar shrifti sal kichraytirildi */
 }
 
 :global(.react-calendar__tile:enabled:hover) {
-  background-color: #2C313C !important;
+  background-color:var(--hover) !important;
   border-radius: 6px;
 }
 
