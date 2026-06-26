@@ -6,46 +6,43 @@ import { useNavigate } from 'react-router-dom';
 
 
 function Habitwise() {
-  const { registerFunc, inputs, setInputs, habit } = useContext(UserContext)
+  const { registerFunc, inputs, setInputs, habit ,t, translation, changeLanguage, setChangeLanguage} = useContext(UserContext)
   const [input1, setInput1] = useState(``);
   const [input2, setInput2] = useState(``);
   const [input3, setInput3] = useState(``);
   const [input4, setInput4] = useState(``);
   const navigate = useNavigate()
   const [file, setFile] = useState()
-  // function getFile(event) {
-  //   setFile(URL.createObjectURL(event.target.files[0]))
-  // }
+ 
   
   console.log(file)
 
   return (
     <div className={style.HabitwiseCard}>
       <div className={style.HabitwiseWrapper}>
-        <h1>Welcome to Habitwise</h1>
+        <h1>{t.hbtWs}</h1>
         <div className={style.userPhotoDiv}>
 
           <input className={style.imgInp} type="file" onChange={(e)=>{
-            // setFile(e.target.files[0].name)
               setFile(URL.createObjectURL(e.target.files[0]))
           }} />
           <img src={file} />
 
         </div>
 
-        <h3 className={style.hh3}>Upload Profile Photo Optional </h3>
+        <h3 className={style.hh3}>{t.imgUpl}</h3>
         <div className={style.inputsDiv}>
 
 
           <input onChange={(e) => {
             setInput1(e.target.value)
-          }} placeholder='Your Name' type="text" name='name' />
+          }} placeholder={t.yrNm} type="text" name='name' />
           <input onChange={(e) => {
             setInput2(e.target.value)
-          }} placeholder='Email Address' type="text" name='email' />
+          }} placeholder={t.emAdr} type="text" name='email' />
           <input onChange={(e) => {
             setInput3(e.target.value)
-          }} placeholder='Create Password' type="password" name='password' />
+          }} placeholder={t.crtPasw} type="password" name='password' />
           <input onChange={(e) => {
             setInput4(e.target.value)
           }} placeholder='+998-XX-XXX-XXXX' type="text" name='telephoneNumber' />
@@ -63,7 +60,7 @@ function Habitwise() {
             let inputs;
             let get = JSON.parse(localStorage.getItem(users))
             if (input1 === `` || input2 === `` || input3 === `` || input4 === ``) {
-              alert(`inputni toldiring`)
+              alert(`${t.flInp}`)
               return
             }
             if (get === null) {
@@ -80,7 +77,7 @@ function Habitwise() {
             } else {
               checkEmail = get.some(checkEmailFunc)
               if (checkEmail) {
-                alert(`Boshqa email ishlating, bu email ishlatilgan`)
+                alert(`${t.anEm}`)
                 return
 
               }
@@ -101,7 +98,7 @@ function Habitwise() {
             navigate(`/`)
 
           }}
-        className={style.createBtn} >Create Account</button>
+        className={style.createBtn} >{t.crAc}</button>
     </div>
     </div >
   )

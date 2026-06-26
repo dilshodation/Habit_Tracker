@@ -7,14 +7,14 @@ import style from './App.module.css'
 import LogIn from './LogIn'
 import Habitwise from './Habitwise'
 function App() {
-const {theme} = useContext(UserContext)
+const {aTheme} = useContext(UserContext)
 
   return (
 
     <>
 
 
-      <main className={style[theme]}>
+      <main className={style[aTheme]}>
         <Routes>
           <Route path='/' element={<LogIn />} />
           <Route path='/A' element={<A />} />

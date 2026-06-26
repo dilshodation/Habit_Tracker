@@ -16,6 +16,12 @@
   --progrss: #ffffff;
   --bgBtn:rgb(93, 88, 88);
 }
+.dashIcons{
+font-size:18px;
+/* color:darkred; */
+  
+}
+
 .dashboardDiv {
   width: 550px;
   padding: 30px;

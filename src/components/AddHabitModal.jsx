@@ -3,14 +3,13 @@ import { useState, useContext } from 'react'
 import { UserContext } from '../UserContext'
 
 function AddHabitModal({closeModal}) {
-  const { habit, setHabit } = useContext(UserContext)
+  const { habit, setHabit, addHabitModal,translation,t, changeLanguage,setChangeLanguage } = useContext(UserContext)
 
   const [inp, setInpValue] = useState(``)
   const [colorBt, setcolorBt] = useState(``)
   const [iconBt, setIconBt] = useState(``)
   const [dayBt, setDayBt] = useState(``);
   const[dayInp,setDayInp] = useState(``)
-  // const [countPercent, setCountPercent] = useState(4);
 
 
   const colors = [
@@ -95,36 +94,35 @@ function AddHabitModal({closeModal}) {
   const days = [
     {
       id: 1,
-      dayName: `Every day`,
+      dayName: t.evdy,
       num: 365
     },
     {
       id: 2,
-      dayName: `3 days a week`,
+      dayName: t.dywee,
       num : 3
     },
     {
       id: 3,
-      dayName: `Weekends`,
+      dayName: t.week,
       num : 7
     }
   ]
-  // console.log(days)
   return (
     <div className={style.addHabitModalDiv}>
       <div className={style.headerDiv}>
-        <h1>Creating a New Habit</h1>
+        <h1>{t.crtHbt}</h1>
         <button onClick={closeModal} className={style.xButton}>X</button>
       </div>
-      <div className={style.habitNameDiv}>
-        <h2>Habit Name</h2>
-        <input value={inp} type="text" placeholder='For example: Reading a book'
+      <div className={`${style.habitNameDiv} ${style[addHabitModal]}`}>
+        <h2>{t.hbtNm} </h2>
+        <input value={inp} type="text" placeholder={t.rdBk}
           onChange={(e) => {
 
             setInpValue(e.target.value)
           }} />
       </div>
-      <h2>Choose an Icon and Color</h2>
+      <h2>{t.icCol}</h2>
       <div className={style.iconButtonDiv}>
         {
           icons.map((icon) => (
@@ -143,8 +141,6 @@ function AddHabitModal({closeModal}) {
               className={style.colorButton}
               style={{ backgroundColor: color.colorName }}
               onClick={(e) => {
-                // e.target.classList.toggle(style.colorBtnFocusToggle)
-                // e.target.style.border='5px solid red'
                 setcolorBt(color.colorName)
               }}>
 
@@ -153,8 +149,8 @@ function AddHabitModal({closeModal}) {
           ))
         }
       </nav>
-      <h2>Repetition</h2>
-      <div className={style.repetitionDiv}>
+      <h2>{t.rpt}</h2>
+      <div className={`${style.repetitionDiv} ${style[addHabitModal]}`}>
         <section>
           {
             days.map((day) => (
@@ -167,7 +163,7 @@ function AddHabitModal({closeModal}) {
               </button>
             ))
           }
-          <input onChange={(e)=>{
+          <input className={style.dayInp} onChange={(e)=>{
             setDayInp(e.target.value)
           }} type="text" />
         </section>
@@ -183,7 +179,7 @@ function AddHabitModal({closeModal}) {
             closeModal()
 
           }}
-        >Cancel</button>
+        >{t.canc}</button>
         <button className={style.saveButton}
 
       
@@ -204,11 +200,11 @@ function AddHabitModal({closeModal}) {
                 percent: 0,
                 habitStickers: iconBt,
                 habitBgColor: colorBt,
+                dates:[]
 
                 
   
               }])
-              // setCountPercent(countPercent + 1)
               setInpValue(``)
               setDayBt(``)
               setDayInp(``)
@@ -216,11 +212,11 @@ function AddHabitModal({closeModal}) {
               setcolorBt(``)
               closeModal()
             } else {
-              alert(`Toliq ma'lumot yozing`)
+              alert(`${t.fullInf}`)
             }
 
           }}
-        >Save</button>
+        >{t.sav}</button>
       </div>
     </div>
   )

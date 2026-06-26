@@ -1,12 +1,21 @@
+
+:root{
+  --bg: #1C1D24;
+  --text:#A0AEC0;
+  
+}
+.addHabitModalTheme{
+  --bg:#ffffff;
+  --text:black;
+}
 .addHabitModalDiv{
-  background-color: #24252D;
+  background-color: var(--bg);
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(8px);
   border-radius: 28px;
   border: 1px solid #3e404d;
   display:flex;
   width: 500px;
-  /* height: 600px; */
   flex-direction: column;
   color: #FFFFFF;
   padding: 30px;
@@ -23,7 +32,7 @@
 }
 .xButton{
   background-color: transparent;
-  color: #A0AEC0;
+  color: var(--text);
   cursor: pointer;
   border: none;
   font-size: 20px;
@@ -34,42 +43,41 @@
   color: #FFFFFF;
 }
 .habitNameDiv{
-/* display:flex; */
-background-color: #1C1D24;
+background-color: var(--bg);
 border-radius: 12px;
 color: #FFFFFF;
 padding: 15px;
 border:  1px solid #3e404d;
 }
 .habitNameDiv input{
-  background-color: #1C1D24;
+  background-color: var(--bg);
   border: 1px solid #3E404D;
   border-radius:12px ;
   padding: 15px;
-  color: #FFFFFF;
+  color: var(--text);
   height: 55px;
   font-size: 15px;
   width: 100%;
   
-
+  
 }
 .habitNameDiv input:focus{
   border: 1px solid #7B61FF;
 }
 .habitNameDiv input::placeholder{
   color: #4A5568;
- 
+  
 }
 .iconButtonDiv{
   display: flex;
-   flex-wrap: wrap; 
-   justify-content: center; 
+  flex-wrap: wrap; 
+  justify-content: center; 
   align-items: center;  
   gap: 15px;
-
+  
 }
 .iconButton{
- margin: auto;
+  margin: auto;
   width: 55px;
   height: 55px;
   font-size:17px;
@@ -93,78 +101,94 @@ border:  1px solid #3e404d;
   color: #FFFFFF;
   background-color: #312E45;
   box-shadow: 0 0 0 3px rgba(123, 97, 255, 0.25);}
-.colorButtonDiv{
-  display: flex;
-  gap: 15px;
-  padding: 5px 0;
-}
-.colorButton{
-  height: 45px;
-  width: 45px;
-  border: 2px solid transparent;
-  cursor: pointer;
-  border-radius:50%;
-  font-size: 16px;
-  margin: auto;
-  margin-top: 15px;
-}
-.colorButton:active{
-  border: 2px solid #FFFFFF;
-  box-shadow: 0px 0px 8px rgba(255,255,255, 0.3);
-}
-/* .colorButton:focus {
-  outline: none; 
-  border: 2px solid #FFFFFF; 
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.4); 
-  transform: scale(1.1); 
-  transition: all 0.2s ease;
-} */
-.colorBtnFocusToggle{
-  outline: none; 
-  border: 2px solid #FFFFFF; 
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.4); 
-  transform: scale(1.1); 
-  transition: all 0.2s ease;
-}
-.repetitionDiv{
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 10px;
+  .colorButtonDiv{
+    display: flex;
+    gap: 15px;
+    padding: 5px 0;
+  }
+  .colorButton{
+    height: 45px;
+    width: 45px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    border-radius:50%;
+    font-size: 16px;
+    margin: auto;
+    margin-top: 15px;
+  }
+  .colorButton:active{
+    border: 2px solid #FFFFFF;
+    box-shadow: 0px 0px 8px rgba(255,255,255, 0.3);
+  }
+  .colorBtnFocusToggle{
+    outline: none; 
+    border: 2px solid #FFFFFF; 
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.4); 
+    transform: scale(1.1); 
+    transition: all 0.2s ease;
+  }
+  .repetitionDiv{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    
+  }
   
-}
-
-section{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  gap: 10px;
-  background-color: transparent;
-  border: 1px solid #3e404d;
-  color: #A0AEC0;
-  border-radius: 12px;
-}
-.repetitionButton{
-  font-size: 14px;
+  section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    background-color: transparent;
+    border: 1px solid #3e404d;
+    color: var(--text);
+    border-radius: 12px;
+  }
+  .dayInp{
+    font-size: 14px;
+    height: 45px;
+    text-align: center;
+    width: 100px;
+    background-color: var(--bg);
+    border: 1px solid #3E404D;
+    border-radius:12px;
+    color: var(--text);
+  }
+  .dayInp:active{
+    border: 1px solid #7B61FF;
+    color: var(--text);
+    background-color: #3E404D;
+    box-shadow: 0 0 10px rgba(123, 97, 255, 0.3);
+  }
+  .dayInp:focus {
+    outline: none; 
+    border: 1px solid #7B61FF;
+    color: #FFFFFF;
+    background-color: #2D2E37; 
+    box-shadow: 0 0 0 3px rgba(123, 97, 255, 0.2)
+  }
+  .repetitionButton{
+    font-size: 14px;
   height: 45px;
-  width: 140px;
-  background-color: #1C1D24;
+  width: 100px;
+  background-color: var(--bg);
   border: 1px solid #3E404D;
   border-radius:12px;
-  color: #A0AEC0;
+  color: var(--text);
 }
 .repetitionButton:active{
   border: 1px solid #7B61FF;
-  color: #FFFFFF;
+  color: var(--text);
   background-color: #3E404D;
   box-shadow: 0 0 10px rgba(123, 97, 255, 0.3);
 }
 .repetitionButton:focus {
   outline: none; 
   border: 1px solid #7B61FF;
-  color: #FFFFFF;
+  color: #ffffff;
   background-color: #2D2E37; 
   box-shadow: 0 0 0 3px rgba(123, 97, 255, 0.2)
 }

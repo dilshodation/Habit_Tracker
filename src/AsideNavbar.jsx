@@ -9,7 +9,7 @@ function AsideNavbar({openSetting}) {
   return (
     <div className={`${style.asideNavbarBigDiv} ${style[asideNavbarTheme]}`}>
       <div className={style.asideBtnsDiv1}>
-        <button className={style[asideNavbarTheme]}></button>
+        {/* <button className={style[asideNavbarTheme]}></button> */}
         <button className={style[asideNavbarTheme]}>Dashboard</button>
         <button className={style[asideNavbarTheme]} >Analytics</button>
         <button className={style[asideNavbarTheme]} onClick={openSetting}>Settings</button>

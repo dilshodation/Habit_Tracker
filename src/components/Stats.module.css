@@ -63,7 +63,6 @@
 
 }
 .statsDiv p{
-  /* color: #FFFFFF; */
   margin: 0;
   font-weight:bold;
   color:var(--p);

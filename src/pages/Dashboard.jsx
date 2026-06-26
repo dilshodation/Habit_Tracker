@@ -2,62 +2,66 @@ import style from './Dashboard.module.css';
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { UserContext } from '../UserContext';
+import { IoMdAddCircleOutline } from "react-icons/io";
+import { MdDeleteForever } from "react-icons/md";
+
+
 
 
 function Dashboard({ openModal }) {
-  const { setHabit, habit , dayBt, dayInp, setDayBt,setDayInp, dashboard} = useContext(UserContext)
+  const { setHabit, habit , dayBt, dayInp, setDayBt,setDayInp, dashboard, changeLanguage,t, translation,setChangeLanguage} = useContext(UserContext)
   let getGreeting = () => {
     let hours = new Date().getHours()
     if (
       hours >= 0 && hours < 12
     ) {
-      return `Good Morning!`
+      return `${t.gdMorn}`
     }
     else if (hours >= 12 && hours < 18) {
-      return `Good Afternoon`
+      return `${t.gdAft}`
     }
     else {
-      return `Good Evening`
+      return `${t.gdEve}`
     }
   }
   let greeting = getGreeting()
   let getMonth = () => {
     let month = new Date().getMonth()
     if (month === 0) {
-      return `January`
+      return `${t.jn}`
     }
     else if (month === 1) {
-      return `February`
+      return `${t.fb}`
     }
     else if (month === 2) {
-      return `March`
+      return `${t.mr}`
     }
     else if (month === 3) {
-      return `April`
+      return `${t.ap}`
     }
     else if (month === 4) {
-      return `May`
+      return `${t.my}`
     }
     else if (month === 5) {
-      return `June`
+      return `${t.jn}`
     }
     else if (month === 6) {
-      return `July`
+      return `${t.jl}`
     }
     else if (month === 7) {
-      return `August`
+      return `${t.av}`
     }
     else if (month === 8) {
-      return `September`
+      return `${t.sp}`
     }
     else if (month === 9) {
-      return `October`
+      return `${t.oct}`
     }
     else if (month === 10) {
-      return `November`
+      return `${t.nv}`
     }
     else if (month === 11) {
-      return `December`
+      return `${t.dc}`
     }
   }
   let putMonth = getMonth()
@@ -72,7 +76,7 @@ function Dashboard({ openModal }) {
       <nav className={style.dashboardMiniCont}>
         <h3 className={style.dashBoardDivH3}>{putMonth}{dayYear}</h3>
         <button onClick={openModal} >+
-          <span>Add a new Habit</span>
+          <span>{t.spn}</span>
         </button>
       </nav>
       <div>
@@ -93,7 +97,7 @@ export default Dashboard
 
 
 function BlockOptions({ namee, dayss,  blockOptionClass, change, addHabitStickers, id }) {
-  const { habit, setHabit, dayInp,setDayInp, dayBt, setDayBt, editPercent , } = useContext(UserContext)
+  const { habit, setHabit, dayInp,setDayInp, dayBt, setDayBt, editPercent , t,translation,changeLanguage,setChangeLanguage} = useContext(UserContext)
 
   return (
     <div className={style.blockOptions} style={{ backgroundColor: blockOptionClass }}>
@@ -105,19 +109,22 @@ function BlockOptions({ namee, dayss,  blockOptionClass, change, addHabitSticker
 
 
       <nav className={style.nav2}>
-        <h3 className={style.nav2H3}>  {dayss} days streak</h3>
- <button style={{fontSize: `12px` }} onClick={()=>{
+        <h3 className={style.nav2H3}>  {dayss} {t.dayStr}</h3>
+ 
+ <MdDeleteForever className={style.dashIcons} onClick={()=>{
  const deleteHabit = habit.filter((item)=>{
     return(
       item.id !== id
       )
     })
     setHabit(deleteHabit)
- }}>del</button>
-       <button 
-          onClick={() => {
+ }} />
+
+
+    
+          <IoMdAddCircleOutline className={style.dashIcons}  onClick={() => {
             if(dayss <=0){
-              alert(`0 sonidan katta son yozing`)
+              alert(`${t.tp0}`)
               return
             }
             let  step = 100/dayss
@@ -127,7 +134,8 @@ function BlockOptions({ namee, dayss,  blockOptionClass, change, addHabitSticker
             }
             editPercent(id, Math.round(newPercent))
             
-          }}>add</button>
+          }} />
+
       </nav>
       <div className={style.nav3}>
         <nav className={style.nav4}>

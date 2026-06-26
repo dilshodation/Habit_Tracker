@@ -8,8 +8,7 @@ import styles from './Heatmap.module.css'; // Module stillarni import qilish
 
 export default function Heatmap() {
   const bugun = new Date();
-  const{heatmap} = useContext(UserContext)
-  // Test uchun ma'lumotlar
+  const{heatmap,t, translation, changeLanguage, setChangeLangugae} = useContext(UserContext)
   const data = [
     { date: '2026-04-01', count: 1 },
     { date: '2026-04-15', count: 3 },
@@ -18,7 +17,7 @@ export default function Heatmap() {
 
   return (
     <div className={`${styles.heatmapContainer} ${styles[heatmap]}` }>
-      <h3 className={styles.heatmapTitle}>Performance & Progress</h3>
+      <h3 className={styles.heatmapTitle}>{t.htmp}</h3>
       
       <CalendarHeatmap
         startDate={new Date('2026-01-01')}
