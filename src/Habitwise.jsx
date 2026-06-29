@@ -6,16 +6,16 @@ import { useNavigate } from 'react-router-dom';
 
 
 function Habitwise() {
-  const { registerFunc, inputs, setInputs, habit ,t, translation, changeLanguage, setChangeLanguage} = useContext(UserContext)
+  const { registerFunc, inputs, setInputs, habit, t, translation, changeLanguage, setChangeLanguage } = useContext(UserContext)
   const [input1, setInput1] = useState(``);
   const [input2, setInput2] = useState(``);
   const [input3, setInput3] = useState(``);
   const [input4, setInput4] = useState(``);
   const navigate = useNavigate()
-  const [file, setFile] = useState()
- 
-  
-  console.log(file)
+  const [imgg, setImgg] = useState()
+
+
+  // console.log(imgg)
 
   return (
     <div className={style.HabitwiseCard}>
@@ -23,10 +23,18 @@ function Habitwise() {
         <h1>{t.hbtWs}</h1>
         <div className={style.userPhotoDiv}>
 
-          <input className={style.imgInp} type="file" onChange={(e)=>{
-              setFile(URL.createObjectURL(e.target.files[0]))
+          <input type="file" onChange={(e) => {
+          
+            const filee = e.target.files[0]
+            const renderr = new FileReader()
+            renderr.onloadend = function () {
+              const rasm = renderr.result
+              console.log(rasm)
+              setImgg(rasm)
+            }
+            renderr.readAsDataURL(filee)
           }} />
-          <img src={file} />
+          <img  className={style.imgInp} src={imgg} />
 
         </div>
 
@@ -36,10 +44,10 @@ function Habitwise() {
 
           <input onChange={(e) => {
             setInput1(e.target.value)
-          }} placeholder={t.yrNm} type="text" name='name' />
+          }} placeholder={t.yrNm}  type="text" name='name' />
           <input onChange={(e) => {
             setInput2(e.target.value)
-          }} placeholder={t.emAdr} type="text" name='email' />
+          }} placeholder={t.emAdr}  type="text" name='email' />
           <input onChange={(e) => {
             setInput3(e.target.value)
           }} placeholder={t.crtPasw} type="password" name='password' />
@@ -51,7 +59,7 @@ function Habitwise() {
 
         <button
           onClick={() => {
-            registerFunc(file, input1, input2, input3, input4)
+            registerFunc( input1, input2, input3, input4,imgg)
             function checkEmailFunc(item) {
               return item.email === input2
             }
@@ -60,6 +68,7 @@ function Habitwise() {
             let inputs;
             let get = JSON.parse(localStorage.getItem(users))
             if (input1 === `` || input2 === `` || input3 === `` || input4 === ``) {
+              if(!imgg)
               alert(`${t.flInp}`)
               return
             }
@@ -71,7 +80,7 @@ function Habitwise() {
                   email: input2,
                   password: input3,
                   telephoneNumber: input4,
-                  userImg: file
+                  userImg: imgg
                 }
               ]
             } else {
@@ -89,7 +98,7 @@ function Habitwise() {
                   email: input2,
                   password: input3,
                   telephoneNumber: input4,
-                  userImg: file
+                  userImg: imgg
                 }
               ]
             }
@@ -98,8 +107,8 @@ function Habitwise() {
             navigate(`/`)
 
           }}
-        className={style.createBtn} >{t.crAc}</button>
-    </div>
+          className={style.createBtn} >{t.crAc}</button>
+      </div>
     </div >
   )
 }

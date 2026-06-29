@@ -66,7 +66,7 @@ function Provider({ children }) {
       setHeatmap(``)
       setCalendar(``)
       setAddHabitModal(``)
-      setting(``)
+      setSetting(``)
     }
 
   }, [ThisUser])

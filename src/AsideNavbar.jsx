@@ -4,8 +4,10 @@ import { useContext } from 'react'
 import { UserContext } from './UserContext'
 
 function AsideNavbar({openSetting}) {
-  const {file,setFile ,asideNavbarTheme} = useContext(UserContext)
+  const {file,setFile ,asideNavbarTheme,userImg} = useContext(UserContext)
       let uer = JSON.parse(sessionStorage.getItem('ddd'))
+      let usImg = JSON.parse(sessionStorage.getItem('ddd'))
+
   return (
     <div className={`${style.asideNavbarBigDiv} ${style[asideNavbarTheme]}`}>
       <div className={style.asideBtnsDiv1}>
@@ -19,7 +21,8 @@ function AsideNavbar({openSetting}) {
         </nav>
       </div>
       <div className={style.asideBtnsDiv2}>
-        <button className={style[asideNavbarTheme]}></button>
+        {/* <button className={style[asideNavbarTheme]}></button> */}
+        <img className={style.userImgClass} src={usImg.userImg} alt="" />
         
         <h3>{uer.name}</h3>
       </div>
