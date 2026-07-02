@@ -9,7 +9,7 @@ import { MdDeleteForever } from "react-icons/md";
 
 
 function Dashboard({ openModal }) {
-  const { setHabit, habit , dayBt, dayInp, setDayBt,setDayInp, dashboard, changeLanguage,t, translation,setChangeLanguage} = useContext(UserContext)
+  const { setHabit, habit, dayBt, dayInp, setDayBt, setDayInp, dashboard, changeLanguage, t, translation, setChangeLanguage } = useContext(UserContext)
   let getGreeting = () => {
     let hours = new Date().getHours()
     if (
@@ -83,7 +83,7 @@ function Dashboard({ openModal }) {
         {
           habit.map((items) => {
             return (
-              <BlockOptions key={items.id} checkbox={items.checkbox} id={items.id} addHabitStickers={items.habitStickers} blockOptionClass={items.habitBgColor}  namee={items.name} dayss={items.day} change={items.percent} />
+              <BlockOptions key={items.id} checkbox={items.checkbox} id={items.id} addHabitStickers={items.habitStickers} blockOptionClass={items.habitBgColor} namee={items.name} dayss={items.day} change={items.percent} />
             )
           })
         }
@@ -96,8 +96,8 @@ export default Dashboard
 
 
 
-function BlockOptions({ namee, dayss,  blockOptionClass, change, addHabitStickers, id }) {
-  const { habit, setHabit, dayInp,setDayInp, dayBt, setDayBt, editPercent , t,translation,changeLanguage,setChangeLanguage} = useContext(UserContext)
+function BlockOptions({ namee, dayss, blockOptionClass, change, addHabitStickers, id }) {
+  const { habit, setHabit, dayInp, setDayInp, dayBt, setDayBt, editPercent, t, translation, changeLanguage, setChangeLanguage } = useContext(UserContext)
 
   return (
     <div className={style.blockOptions} style={{ backgroundColor: blockOptionClass }}>
@@ -110,31 +110,37 @@ function BlockOptions({ namee, dayss,  blockOptionClass, change, addHabitSticker
 
       <nav className={style.nav2}>
         <h3 className={style.nav2H3}>  {dayss} {t.dayStr}</h3>
- 
- <MdDeleteForever className={style.dashIcons} onClick={()=>{
- const deleteHabit = habit.filter((item)=>{
-    return(
-      item.id !== id
-      )
-    })
-    setHabit(deleteHabit)
- }} />
+
+        <MdDeleteForever className={style.dashIcons} onClick={() => {
+          const deleteHabit = habit.filter((item) => {
+            return (
+              item.id !== id
+            )
+          })
+          setHabit(deleteHabit)
+        }} />
 
 
-    
-          <IoMdAddCircleOutline className={style.dashIcons}  onClick={() => {
-            if(dayss <=0){
-              alert(`${t.tp0}`)
-              return
-            }
-            let  step = 100/dayss
-            let newPercent = change + step
-            if(newPercent >100){
-              newPercent = 100
-            }
-            editPercent(id, Math.round(newPercent))
-            
-          }} />
+
+        <IoMdAddCircleOutline className={style.dashIcons} onClick={() => {
+          const today = new Date().toISOString().split('T')[0];
+          let todayCheck = habit.dates.filter((e) => {
+            return  e === today
+          })
+          console.log(habit[0].dates[0]);
+
+          if (dayss <= 0) {
+            alert(`${t.tp0}`)
+            return
+          }
+          let step = 100 / dayss
+          let newPercent = change + step
+          if (newPercent > 100) {
+            newPercent = 100
+          }
+          editPercent(id, Math.round(newPercent))
+
+        }} />
 
       </nav>
       <div className={style.nav3}>

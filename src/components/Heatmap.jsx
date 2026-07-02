@@ -10,7 +10,7 @@ export default function Heatmap() {
   const bugun = new Date();
   const{heatmap,t, translation, changeLanguage, setChangeLangugae} = useContext(UserContext)
   const data = [
-    { date: '2026-04-01', count: 1 },
+    { date: '2026-04-01',  count: 1 },
     { date: '2026-04-15', count: 3 },
     { date: '2026-04-30', count: 4 },
   ];

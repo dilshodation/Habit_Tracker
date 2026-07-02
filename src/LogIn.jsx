@@ -51,7 +51,7 @@ function LogIn() {
         <div className={style.LogInInputsDiv}>
           <h3 className={style.inpH3}>{t.eAdr}</h3>
           <input onChange={(e) => {
-            setLogInp1(e.target.value)
+            setLogInp1(e.target.value.toLowerCase())
           }} type="text" placeholder='@email.com' />
           <h3 className={style.inpH3}>{t.pasw}</h3>
           <input onChange={(e) => {

@@ -45,8 +45,9 @@ function Habitwise() {
           <input onChange={(e) => {
             setInput1(e.target.value)
           }} placeholder={t.yrNm}  type="text" name='name' />
-          <input onChange={(e) => {
-            setInput2(e.target.value)
+          <input  onChange={(e) => {
+            setInput2(e.target.value.toLowerCase())
+            
           }} placeholder={t.emAdr}  type="text" name='email' />
           <input onChange={(e) => {
             setInput3(e.target.value)
