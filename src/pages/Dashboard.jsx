@@ -123,22 +123,9 @@ function BlockOptions({ namee, dayss, blockOptionClass, change, addHabitStickers
 
 
         <IoMdAddCircleOutline className={style.dashIcons} onClick={() => {
-          const today = new Date().toISOString().split('T')[0];
-          let todayCheck = habit.dates.filter((e) => {
-            return  e === today
-          })
-          console.log(habit[0].dates[0]);
-
-          if (dayss <= 0) {
-            alert(`${t.tp0}`)
-            return
-          }
-          let step = 100 / dayss
-          let newPercent = change + step
-          if (newPercent > 100) {
-            newPercent = 100
-          }
-          editPercent(id, Math.round(newPercent))
+         
+          editPercent(id,dayss,change)
+          
 
         }} />
 

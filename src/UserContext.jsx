@@ -120,30 +120,72 @@ function Provider({ children }) {
   }, [changeLanguage]
   )
   /////////////////////////////////////////////////////////////////////////
-  function editPercent(id, newPercent) {
+  // function editPercent(id, newPercent) {
+  //   const sanaString = new Date().toISOString().split('T')[0];
+  //   // console.log(sanaString)
+  //   let updateHabit = habit.map((e) => {
+
+
+  //     if (e.id === id) {
+
+  //       if (e.dates.includes(sanaString)) {
+
+  //         return { ...e, percent: newPercent }
+  //       }
+  //       else {
+  //         return {
+  //           ...e,
+  //           percent: newPercent,
+  //           dates: [...e.dates, sanaString]
+  //         };
+  //       }
+  //     }
+
+  //     return e
+
+
+  //   })
+  //   setHabit(updateHabit)
+  // }
+
+  function editPercent(id, dayss, change) {
+    const currentHabit = habit.find((e) => e.id === id);
+    function formatDate(date) {
+      const year = date.getFullYear();
+      const month = String(date.getMonth() + 1).padStart(2, "0");
+      const day = String(date.getDate()).padStart(2, "0");
+      return `${year}-${month}-${day}`;
+    }
+    const today = formatDate(new Date());
+    if (currentHabit.dates.includes(today)) {
+      alert("Bugungi kunda bu odat bajarilgan");
+      return;
+    }
+    if (dayss <= 0) {
+      alert(t.tp0);
+      return;
+    }
+    let step = 100 / dayss;
+    let newPercent = change + step;
+    if (newPercent > 100) {
+      newPercent = 100;
+    }
+    let newPercents = Math.round(newPercent)
     const sanaString = new Date().toISOString().split('T')[0];
-    // console.log(sanaString)
     let updateHabit = habit.map((e) => {
-
-
       if (e.id === id) {
-
         if (e.dates.includes(sanaString)) {
-
-          return { ...e, percent: newPercent }
+          return { ...e, percent: newPercents }
         }
         else {
           return {
             ...e,
-            percent: newPercent,
+            percent: newPercents,
             dates: [...e.dates, sanaString]
           };
         }
       }
-
       return e
-
-
     })
     setHabit(updateHabit)
   }

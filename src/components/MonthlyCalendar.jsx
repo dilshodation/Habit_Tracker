@@ -23,10 +23,19 @@ habit.forEach((item) => {
   })
 })
 
+const formatDate = (date) => {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+
+  // return ${year}-${month}-${day};
+  return `${year}-${month}-${day}`;
+};
 
   const renderTileContent = ({ date, view }) => {
     if (view === 'month') {
-      const sanaString = date.toISOString().split('T')[0];
+      const sanaString = formatDate(date)
+      // const sanaString = date.toISOString().split('T')[0];
       const kunlikOdatlar = habitData[sanaString];
 
       if (kunlikOdatlar) {
