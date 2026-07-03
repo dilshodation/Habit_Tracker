@@ -31,3 +31,18 @@
 :global(.react-calendar-heatmap) .color-empty {
   fill: #2C313C;
 }
+:global(.react-calendar-heatmap .color-scale-1) {
+  fill: #9BE9A8 !important;
+}
+
+:global(.react-calendar-heatmap .color-scale-2) {
+  fill: #40C463 !important;
+}
+
+:global(.react-calendar-heatmap .color-scale-3) {
+  fill: #30A14E !important;
+}
+
+:global(.react-calendar-heatmap .color-scale-4) {
+  fill: #216E39 !important;
+}

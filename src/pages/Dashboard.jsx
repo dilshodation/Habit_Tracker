@@ -71,6 +71,7 @@ function Dashboard({ openModal }) {
 
 
   return (
+    
     <div className={`${style.dashboardDiv} ${style[dashboard]}`}>
       <h1>{greeting}</h1>
       <nav className={style.dashboardMiniCont}>
